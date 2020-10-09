@@ -1,10 +1,14 @@
 import React from 'react'
+import './style.css'
+
+import Cards from '../Layout/card/cards'
+import Nav from '../Layout/nav/nav'
 
 class Home extends React.Component{
   render(){
     return(
       <div>
-        <h1>Home</h1>
+        <Nav/>
         <section>
           <div id="navHome">
             <ul>
@@ -12,11 +16,10 @@ class Home extends React.Component{
               <li>Homme</li>
             </ul>
           </div>
-          <div id="card">
-            <img src="" alt="article" />
-            <p>Jean Skinny bleu</p>
-            <p>49,99 $</p>
-            <button>Buy Now</button>
+          <div id="itemsCards">
+            <Cards/>
+            <Cards/>
+            <Cards/>
           </div>
         </section>
       </div>

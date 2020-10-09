@@ -1,0 +1,17 @@
+
+section{
+  display: flex;
+  flex-direction: row;
+  #navHome{
+    padding: 1em;
+    li{
+      margin: 0.5em;
+    }
+  }
+  #itemsCards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+}
