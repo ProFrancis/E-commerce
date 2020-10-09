@@ -6,11 +6,14 @@ export class SignUp extends Component {
     super(props)
   
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      confPassword: ''
+      form:{
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        confPassword: ''
+      }
+      
     }
   }
   
@@ -18,6 +21,17 @@ export class SignUp extends Component {
     let nam = event.target.name
     let val = event.target.value
     this.setState({[nam]: val})
+  }
+
+  submitHandler = async (event) => {
+    const signUp = await axios.post('http://localhost:3000/sign-up', {
+      fname: this.form.firstName,
+      lname: this.form.lastName,
+      email: this.form.email,
+      password: this.form.password
+    })
+
+    const res = await signUp
   }
 
   render() {
