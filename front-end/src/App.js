@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // LAYOUT 
-import Nav from './components/Layout/nav'
+import Header from './components/Layout/header/nav'
 
 // COMPONENTS
 import Accueil from './components/pageAccueil'
@@ -13,7 +13,7 @@ function App() {
     <div>
       <Router>
         <Route path="/">
-          <Nav/>        
+          <Header/>        
         </Route>
         <Switch>
           <Route exact path="/">
