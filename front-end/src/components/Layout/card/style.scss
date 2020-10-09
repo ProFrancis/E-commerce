@@ -1,0 +1,27 @@
+$color-white: #ffff;
+$color-border: #d0dbe3;
+$color-button-border: #009688;
+$color-button-background: #6abe7b;
+
+#card{
+  width: 250px;
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 0px 20px 20px 0px;
+  border: 1px solid $color-border;
+  font-family: 'SF Pro UltraLight';
+  img{
+    object-fit: contain;
+    width: 100%;
+  }
+  p{
+    margin: 5px 0px 5px 0px;
+  }
+  button{
+    padding: 5px;
+    color:$color-white;
+    border-radius: 10px;
+    background-color: $color-button-background;
+    border: 1px solid $color-button-border;
+  }
+}
