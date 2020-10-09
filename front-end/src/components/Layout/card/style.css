@@ -1,0 +1,27 @@
+#card {
+  width: 250px;
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 0px 20px 20px 0px;
+  border: 1px solid #d0dbe3;
+  font-family: 'SF Pro UltraLight';
+}
+
+#card img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+
+#card p {
+  margin: 5px 0px 5px 0px;
+}
+
+#card button {
+  padding: 5px;
+  color: #ffff;
+  border-radius: 10px;
+  background-color: #6abe7b;
+  border: 1px solid #009688;
+}
+/*# sourceMappingURL=style.css.map */

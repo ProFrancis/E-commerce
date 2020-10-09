@@ -1,0 +1,16 @@
+nav{
+  margin-bottom: 3.5em;
+}
+#ulNav{
+  display: flex;
+  justify-content: center;
+}
+li{
+  margin: 1em;
+}
+a{
+  color: black;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family: "SF Pro ultralight";
+}
