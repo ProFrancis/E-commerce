@@ -6,7 +6,7 @@ class Cards extends React.Component{
   render(){
     return(
       <div id="card">
-        <img src={img} alt="article" whidth="250px" />
+        <img src={img} alt="article" whidth="250px"/>
         <p>Jean Skinny bleu</p>
         <p>49,99 $</p>
         <button>Buy Now</button>
