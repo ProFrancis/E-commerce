@@ -21,6 +21,10 @@
   font-family: "SF Pro ultralight";
 }
 
+#layoutHeader header .style {
+  color: #fff;
+}
+
 #layoutHeader header div {
   width: 100%;
   display: -webkit-box;
