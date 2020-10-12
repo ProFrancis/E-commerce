@@ -1,0 +1,48 @@
+#body_Accueil{
+  height: 100vh;
+}
+video, #link_Home {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  right: 0;
+  bottom: 0;
+}
+video{
+  z-index: -1;
+}
+
+#link_Home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stroke{
+  stroke: #fff;
+  fill: transparent;
+  stroke-width: 8px;
+  stroke-dashoffset: -474;
+  stroke-dasharray: 140 540;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+#svg{
+  position: relative;
+}
+#svg a{
+  top: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 32px;
+  margin-left: 115px;
+  position: absolute;
+  letter-spacing: 8px;
+  font-family: "SF Pro Light";
+}
+#svg:hover .stroke {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
+}
