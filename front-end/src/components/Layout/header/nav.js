@@ -3,6 +3,7 @@ import './style.css'
 
 class Nav extends React.Component{
   render(){
+    console.log("OK")
     return(
       <div id="layoutHeader">
         <header>

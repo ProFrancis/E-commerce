@@ -5,7 +5,7 @@ class Accueil extends React.Component{
   render(){
     return(
       <div id="body_Accueil">
-        <video autoplay muted>
+        <video autoPlay muted loop>
           <source src={video} type="video/mp4" />
         </video>
         <div id="link_Home">
