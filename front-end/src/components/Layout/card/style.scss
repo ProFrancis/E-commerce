@@ -4,7 +4,6 @@ $color-button-border: #009688;
 $color-button-background: #6abe7b;
 
 #card{
-  z-index: 5;
   width: 250px;
   height: 395px;
   cursor: pointer;
@@ -35,7 +34,7 @@ $color-button-background: #6abe7b;
   p:nth-child(3n){
     opacity: 0;
     z-index: 0;
-    transition: all 0.5s;
+    transition: all 0.75s;
   }
   button{
     z-index: 0;
@@ -44,7 +43,7 @@ $color-button-background: #6abe7b;
     cursor: pointer;
     color:$color-white;
     border-radius: 10px;
-    transition: all 0.45s;
+    transition: all 0.65s;
     border: 1px solid $color-button-border;
     background-color: $color-button-background;
   }
