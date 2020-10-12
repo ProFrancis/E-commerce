@@ -1,9 +1,13 @@
 import React from 'react'
 import './style.css'
+import { useRouteMatch, useLocation, useHistory } from "react-router-dom";
 
 class Nav extends React.Component{
+
+
   render(){
-    console.log("OK")
+    const { pathname } = useLocation
+    console.log(window.location.href)
     return(
       <div id="layoutHeader">
         <header>

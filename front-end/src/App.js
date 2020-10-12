@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, useLocation } from "react-router-dom";
 
 // LAYOUT 
 import Header from './components/Layout/header/nav'
@@ -9,6 +9,8 @@ import Accueil from './components/pageAccueil'
 import Home from './components/pageHome'
 
 function App() {
+  // let { pathname};
+
   return (
     <div>
       <Router>
