@@ -1,7 +1,12 @@
 #card {
+  z-index: 5;
   width: 250px;
+  height: 395px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   text-align: center;
-  padding-bottom: 10px;
+  position: relative;
   margin: 0px 20px 20px 0px;
   border: 1px solid #d0dbe3;
   font-family: 'SF Pro UltraLight';
@@ -10,18 +15,59 @@
 #card img {
   -o-object-fit: contain;
      object-fit: contain;
+  position: absolute;
+  left: 0;
   width: 100%;
+  z-index: 4;
+}
+
+#card p:nth-child(2n) {
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+  padding: 9px 0px 8px 0px;
+  -webkit-transform: translateY(357px);
+          transform: translateY(357px);
+  background-color: #ffff;
 }
 
 #card p {
   margin: 5px 0px 5px 0px;
 }
 
+#card p:nth-child(3n) {
+  opacity: 0;
+  z-index: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
 #card button {
+  z-index: 0;
+  opacity: 0;
   padding: 5px;
+  cursor: pointer;
   color: #ffff;
   border-radius: 10px;
-  background-color: #6abe7b;
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s;
   border: 1px solid #009688;
+  background-color: #6abe7b;
+}
+
+#card:hover {
+  height: 450px;
+}
+
+#card:hover p:nth-child(3n) {
+  opacity: 1;
+  -webkit-transform: translateY(390px);
+          transform: translateY(390px);
+}
+
+#card:hover button {
+  opacity: 1;
+  -webkit-transform: translateY(390px);
+          transform: translateY(390px);
 }
 /*# sourceMappingURL=style.css.map */
