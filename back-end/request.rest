@@ -1,0 +1,9 @@
+POST http://localhost:3000/sign-up HTTP/1.1
+content-type: application/json
+
+{
+  "fname": "sample",
+  "lname": "Wed",
+  "email": "Wed, 21 Oct 2015 18:27:50 GMT",
+  "password": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
