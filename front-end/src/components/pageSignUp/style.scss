@@ -1,5 +1,10 @@
 #signUp {
-  background-image: url("../../asset/img/background_sign_up.svg");
-  color:black;
-
+  top: 0;
+  z-index: -1;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../asset/img/sign_up.png");
 }

@@ -9,6 +9,8 @@ import Header from './components/Layout/header/nav'
 import Accueil from './components/pageAccueil'
 import Home from './components/pageHome'
 import SignUp from './components/pageSignUp/SignUp';
+import CreateProducts from './components/pageCreateProducts';
+
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/SignUp">
             <SignUp />
+          </Route>
+          <Route exact path="/CreateProducts">
+            <CreateProducts/>
           </Route>
         </Switch>
       </Router>
