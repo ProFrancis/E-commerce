@@ -13,7 +13,6 @@ class Accueil extends React.Component{
             <a>HOME</a>
             <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg" >
               <rect class="stroke" height="60" width="320" />
-              <div>zaeazeae</div>
             </svg>
           </div>
         </div>
