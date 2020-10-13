@@ -1,1 +1,100 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+#bodyCreateProducts {
+  top: 0;
+  z-index: -1;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  padding-top: 10rem;
+  background-color: #202021;
+  font-family: "SF Pro Light";
+}
+
+#bodyCreateProducts select, #bodyCreateProducts input {
+  border: none;
+  outline: none;
+  margin-bottom: 1.5em;
+  background-color: transparent;
+  border-bottom: 2px solid #ffffff;
+}
+
+#bodyCreateProducts ::-webkit-input-placeholder, #bodyCreateProducts select option:first-child, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+  color: #fff;
+}
+
+#bodyCreateProducts :-ms-input-placeholder, #bodyCreateProducts select option:first-child, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+  color: #fff;
+}
+
+#bodyCreateProducts ::-ms-input-placeholder, #bodyCreateProducts select option:first-child, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+  color: #fff;
+}
+
+#bodyCreateProducts ::placeholder, #bodyCreateProducts select option:first-child, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+  color: #fff;
+}
+
+#bodyCreateProducts .divForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#bodyCreateProducts form {
+  margin: 0 auto;
+}
+
+#bodyCreateProducts .sieze {
+  max-width: 47%;
+}
+
+#bodyCreateProducts input {
+  width: 100%;
+}
+
+#bodyCreateProducts input[type="text"] {
+  background: rgba(0, 0, 0, 0);
+}
+
+#bodyCreateProducts select {
+  width: 47%;
+}
+
+#bodyCreateProducts select {
+  color: #fff;
+}
+
+#bodyCreateProducts textarea {
+  width: 100%;
+  height: 12em;
+}
+
+#bodyCreateProducts button {
+  width: 100%;
+  border: none;
+  background-color: #739f82;
+}
+
+#bodyCreateProducts .inputfile {
+  opacity: 0;
+  z-index: -1;
+  width: 0.1px;
+  height: 0.1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+#bodyCreateProducts .inputfile + label {
+  width: 47%;
+  cursor: pointer;
+  margin-bottom: 1.5em;
+  display: inline-block;
+  border-bottom: 2px solid #fff;
+}
+
+#bodyCreateProducts .inputfile:focus + label {
+  outline: none;
+}
+/*# sourceMappingURL=style.css.map */

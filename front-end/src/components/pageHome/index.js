@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 
 import Cards from '../Layout/card/cards'
-import Nav from '../Layout/nav/nav'
+import Nav from '../Layout/nav'
 
 class Home extends React.Component{
   render(){
