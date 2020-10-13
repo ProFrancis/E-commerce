@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Form, Button} from 'react-bootstrap'
 import './style.css'
-// import bg from '../asset/img/background_sign_up.svg'
 import axios from 'axios'
 
 export class SignUp extends Component {
@@ -55,11 +54,11 @@ export class SignUp extends Component {
   render() {
     return (
       <div id='signUp'>
-        <Form onSubmit={this.handleSubmit} className="mx-auto w-25 text-left">
-          <p>{this.state.msg}</p>
+        <p>{this.state.msg}</p>
+        <Form onSubmit={this.handleSubmit} className="mx-auto w-75 text-left">
           <Form.Group controlId="formBasicFirstName">
             <Form.Label>First Name:</Form.Label>
-            <Form.Control type="text" name='firstName' onChange={this.handleInput} placeholder="Enter First Name" required/>
+            <Form.Control type="text" name='firstName' onChange={this.handleInput} placeholder="First Name" required/>
             {/* <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text> */}
@@ -67,17 +66,17 @@ export class SignUp extends Component {
 
           <Form.Group controlId="formBasicLastName">
             <Form.Label>Last Name:</Form.Label>
-            <Form.Control type="text" name='lastName' onChange={this.handleInput} placeholder="Enter Last Name" required/>
+            <Form.Control type="text" name='lastName' onChange={this.handleInput} placeholder="Last Name" required/>
           </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email Address:</Form.Label>
-            <Form.Control type="email" name='email' onChange={this.handleInput} placeholder="Enter Email" required/>
+            <Form.Control type="email" name='email' onChange={this.handleInput} placeholder="Email" required/>
           </Form.Group>
 
           <Form.Group controlId="formBasicPass">
             <Form.Label>Password:</Form.Label>
-            <Form.Control type="Password" name='password' onChange={this.handleInput} placeholder="Enter Password" required/>
+            <Form.Control type="Password" name='password' onChange={this.handleInput} placeholder="Password" required/>
           </Form.Group>
 
           <Form.Group controlId="formBasicconfPass">

@@ -22,12 +22,12 @@ router.post('/sign-up', (req, res) => {
 })
 
 .post('/sign-in', (req, res) => {
-  const {email, pass} = req.body
+  const {email, password} = req.body
   
   db.query(`SELECT * FROM users WHERE email = '${email}'`, (err, results) => {
     if (err) throw err
 
-    if(results[0] && bcrypt.compareSync(pass, results[0].password)){
+    if(results[0] && bcrypt.compareSync(password, results[0].password)){
       let token = jwt.sign({userId: results[0].id, email: results[0].email, userName: results[0].name}, 'usersecret')
       res.status(201).send({auth: true, token: token}) 
     } else if(!results[0]) {
