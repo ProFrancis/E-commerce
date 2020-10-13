@@ -8,7 +8,7 @@ import Header from './components/Layout/header/nav'
 // COMPONENTS
 import Accueil from './components/pageAccueil'
 import Home from './components/pageHome'
-import SignUp from './components/SignUp/SignUp';
+import SignUp from './components/pageSignUp/SignUp';
 
 function App() {
   return (
