@@ -1,10 +1,4 @@
-const db = require('./db')
-
-// export function createdbEcommerc(){
-//   db.query('CREATE DATABASE e-commerce-wf')
-// }
-
-export function addUsersTable(){
+const addUsersTable = (db) => {
   db.query(`CREATE TABLE IF NOT EXISTS users ( id INT NOT NULL AUTO_INCREMENT ,
     first_name VARCHAR(100) NOT NULL ,
     last_name VARCHAR(100) NOT NULL ,
@@ -13,24 +7,26 @@ export function addUsersTable(){
     PRIMARY KEY (id))`) 
 }
 
-
-export function addProductsTable(){
+const addProductsTable = (db) => {
   db.query(`CREATE TABLE IF NOT EXISTS products ( id INT NOT NULL AUTO_INCREMENT ,
+    user_id INT NOT NULL ,
     product_name VARCHAR(100) NOT NULL ,
-    description TEXT NOT NULL ,
-    category VARCHAR(100) NOT NULL ,
-    sexe VARCHAR(50) NOT NUL,
-    price INT NOT NULL ,
-    is_active VARCHAR(50) NOT NULL
+    content TEXT NOT NULL ,
+    category VARCHAR(10) NOT NULL ,
     picture VARCHAR(255) NOT NULL ,
+    price INT NOT NULL ,
+    is_active VARCHAR(10) NOT NULL ,
     date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     PRIMARY KEY (id))`) 
 }
 
-export function addProductsTable(){
+const addPictureTable = (db) => {
   db.query(`CREATE TABLE IF NOT EXISTS pictures ( id INT NOT NULL AUTO_INCREMENT ,
     user_id INT NOT NULL ,
-    path VARCHAR(255) NOT NULL , PRIMARY KEY (id))`) 
+    path VARCHAR(255) NOT NULL , 
+    PRIMARY KEY (id))`) 
 }
 
-
+exports.addUsersTable = addUsersTable;
+exports.addProductsTable = addProductsTable;
+exports.addPictureTable = addPictureTable;
