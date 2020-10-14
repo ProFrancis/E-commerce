@@ -3,9 +3,13 @@ const mysql = require('mysql2')
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  database: 'e-commerce-wf'
+  password: "",
+  database: 'e_commerce-wf'
 })
 
-connection.connect(err => {if (err) throw err})
+connection.connect(async function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
 
 module.exports = connection
