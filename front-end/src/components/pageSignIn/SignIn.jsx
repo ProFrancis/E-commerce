@@ -42,12 +42,12 @@ export class SignIn extends Component {
 
   render() {
     return (
-      <div>
+      <div id="signIn">
         <p>{this.state.msg}</p>
-        <Form method="POST" onSubmit={this.handleSubmit}>
+        <Form method="POST" onSubmit={this.handleSubmit}  className="mx-auto w-25 text-left">
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" name='email' onChange={this.handleInput}  placeholder="Enter email" />
+            <Form.Control type="email" name='email' onChange={this.handleInput}  placeholder="Enter email" /> 
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">

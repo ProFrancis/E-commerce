@@ -1,4 +1,59 @@
-div {
-  color: blue;
+#signIn {
+  top: 0;
+  z-index: -1;
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../../asset/img/background_sign_in.svg");
+}
+
+#signIn form {
+  margin-top: 15vh;
+}
+
+#signIn form .form-group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+#signIn form .form-group .form-label {
+  display: none;
+}
+
+#signIn form .form-group .form-control {
+  font-family: inherit;
+  border: 0;
+  border-bottom: 2px solid white;
+  border-radius: none;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s;
+}
+
+#signIn form .form-group .form-control::-webkit-input-placeholder {
+  color: white;
+  font-weight: bold;
+}
+
+#signIn form .form-group .form-control:-ms-input-placeholder {
+  color: white;
+  font-weight: bold;
+}
+
+#signIn form .form-group .form-control::-ms-input-placeholder {
+  color: white;
+  font-weight: bold;
+}
+
+#signIn form .form-group .form-control::placeholder {
+  color: white;
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */

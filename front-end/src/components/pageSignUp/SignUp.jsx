@@ -55,36 +55,36 @@ export class SignUp extends Component {
     return (
       <div id='signUp'>
         <p>{this.state.msg}</p>
-        <Form onSubmit={this.handleSubmit} className="mx-auto w-75 text-left">
+        <Form onSubmit={this.handleSubmit} className="ml-5 w-25 text-left">
           <Form.Group controlId="formBasicFirstName">
-            <Form.Label>First Name:</Form.Label>
             <Form.Control type="text" name='firstName' onChange={this.handleInput} placeholder="First Name" required/>
+            <Form.Label>First Name</Form.Label>
             {/* <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text> */}
           </Form.Group>
 
           <Form.Group controlId="formBasicLastName">
-            <Form.Label>Last Name:</Form.Label>
+            <Form.Label>Last Name</Form.Label>
             <Form.Control type="text" name='lastName' onChange={this.handleInput} placeholder="Last Name" required/>
           </Form.Group>
 
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email Address:</Form.Label>
+            <Form.Label>Email Address</Form.Label>
             <Form.Control type="email" name='email' onChange={this.handleInput} placeholder="Email" required/>
           </Form.Group>
 
           <Form.Group controlId="formBasicPass">
-            <Form.Label>Password:</Form.Label>
+            <Form.Label>Password</Form.Label>
             <Form.Control type="Password" name='password' onChange={this.handleInput} placeholder="Password" required/>
           </Form.Group>
 
           <Form.Group controlId="formBasicconfPass">
-            <Form.Label>Confirm Password:</Form.Label>
+            <Form.Label>Confirm Password</Form.Label>
             <Form.Control type="Password" name='confPassword' onChange={this.handleInput} placeholder="confirm Password" required/>
           </Form.Group>
 
-          <Button variant="primary" type="submit">Submit</Button>
+          <Button variant="primary" type="submit">Sign UP</Button>
         </Form>
       </div>
     )
