@@ -10,23 +10,23 @@ class Nav extends React.Component{
         {window.location.href === "http://localhost:3000/CreateProducts" ? 
           <nav>
             <ul id="ulNav">
-              <li><a class="nav">Home</a></li>
-              <li><a class="nav">Home</a></li>
-              <li><a class="nav">Home</a></li>
-              <li><a class="nav">Home</a></li>
-              <li><a class="nav">Home</a></li>
-              <li><a class="nav">Home</a></li>
+              {/* <li><a href="#" class="nav">Home</a></li>
+              <li><a href="#" class="nav">Home</a></li>
+              <li><a href="#" class="nav">Home</a></li>
+              <li><a href="#" class="nav">Home</a></li>
+              <li><a href="#" class="nav">Home</a></li>
+              <li><a href="#" class="nav">Home</a></li> */}
             </ul>
           </nav>
         : 
         <nav>
           <ul id="ulNav">
-            <li><a>Home</a></li>
-            <li><a>Home</a></li>
-            <li><a>Home</a></li>
-            <li><a>Home</a></li>
-            <li><a>Home</a></li>
-            <li><a>Home</a></li>
+            {/* <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li> */}
           </ul>
         </nav>
         }

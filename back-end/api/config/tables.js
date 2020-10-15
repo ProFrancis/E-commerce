@@ -12,10 +12,10 @@ const addProductsTable = (db) => {
     user_id INT NOT NULL ,
     product_name VARCHAR(100) NOT NULL ,
     content TEXT NOT NULL ,
-    category VARCHAR(10) NOT NULL ,
-    picture VARCHAR(255) NOT NULL ,
+    category CHAR(1) NOT NULL ,
+    path VARCHAR(255) NOT NULL ,
     price INT NOT NULL ,
-    is_active VARCHAR(10) NOT NULL ,
+    is_active INT NOT NULL ,
     date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     PRIMARY KEY (id))`) 
 }

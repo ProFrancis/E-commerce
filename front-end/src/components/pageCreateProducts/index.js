@@ -8,17 +8,19 @@ import {Container, Row, Col } from 'react-bootstrap'
 
 class CreateProducts extends React.Component{
   state = {
-    userId: 1,
+    userId: 3,
     productName: '',
     prix: null,
     category: '',
     picture: '',
-    content: ''
+    content: '',
+    progress: 0
   }
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value})
   }
+
   handleChangeFile = event => {
     this.setState({ picture: event.target.files[0]})
   }
@@ -27,18 +29,26 @@ class CreateProducts extends React.Component{
     event.preventDefault()
     const formData = new FormData()
     formData.append('image', this.state.picture, this.state.picture.name ) 
-    // formData.append('userId', this.state.userId)
+    formData.append('userId', this.state.userId)
     formData.append('productName', this.state.productName)
     formData.append('price', this.state.prix)
     formData.append('category', this.state.category)
     formData.append('content', this.state.content)
-    console.log("Form data => ", formData)
+
     try{
-      await axios.post('http://localhost:3001/createProducts', formData) 
+      const res = await axios.post('http://localhost:3001/createProducts', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }) 
     } catch(err){
-      if(err.response.status === 500) console.log('there was a problem with server')
-      else console.log(err.response.data.msg)
+      if(err.response.status === 500){
+        console.log('There was a problem with  the server')
+      } else {
+        console.log(err.response.data.msg)
+      }
     }
+
   }
 
   render(){
