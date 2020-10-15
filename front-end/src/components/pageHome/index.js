@@ -5,6 +5,9 @@ import Cards from '../Layout/card/cards'
 import Nav from '../Layout/nav'
 
 class Home extends React.Component{
+  componentDidMount(){
+    console.log("PÊT")
+  }
   render(){
     return(
       <div>
