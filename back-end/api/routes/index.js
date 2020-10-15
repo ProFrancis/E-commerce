@@ -52,7 +52,7 @@ router.post('/sign-up', (req, res) => {
 
 
 
-router.post('/createProducts',(req, res) => {
+router.post('/products',(req, res) => {
     addTables.addProductsTable(db)
     if(req.files === null) return res.status(400).json({msg: 'no file uploader'}) 
     const file = req.files.image
@@ -74,7 +74,7 @@ router.post('/createProducts',(req, res) => {
     return res.json({ body: req.body , fileName: file.name})
   })
 
-router.get('/createProducts', async (req, res) => {
+router.get('/products', async (req, res) => {
   db.query('SELECT * FROM products', function(err, response){
     try{  
       return res.json(response).status(200)
@@ -84,7 +84,7 @@ router.get('/createProducts', async (req, res) => {
   })
 })
 
-router.get('/createProducts/:id', async (req, res) => {
+router.get('/products/:id', async (req, res) => {
   db.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, response){
     try{  
       return res.json(response).status(200)

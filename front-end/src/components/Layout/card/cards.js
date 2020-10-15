@@ -13,7 +13,7 @@ class Cards extends React.Component{
 
   async componentDidMount(){
     try{
-      const response = await axios.get('http://localhost:3001/createProducts')
+      const response = await axios.get('http://localhost:3001/products')
       const products = await response.data
       if(response.status !== 200) throw Error(response.statusText)
       this.setState({ products })
