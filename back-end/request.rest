@@ -30,3 +30,14 @@ content-type: application/json
   "content": "Boulalalalala",
   "picture": "okay.png"
 }
+
+###
+GET http://localhost:3001/createProducts
+content-type: application/json
+
+###
+
+GET http://localhost:3001/createProducts/1
+content-type: application/json
+
+###

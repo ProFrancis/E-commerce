@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 // Utils config
-const path = '../../../front-end/public/products'
+const pathProduct = '../../../front-end/public/products'
 const addTables = require('../config/tables.js')
 
 router.post('/sign-up', (req, res) => {
@@ -40,20 +40,74 @@ router.post('/sign-up', (req, res) => {
   })
 })
 
-router.post('/createProducts', async (req, res) => {
-  try{
+// UPLOAD USER 
+
+
+
+
+
+
+
+//
+
+
+
+router.post('/createProducts',(req, res) => {
     addTables.addProductsTable(db)
-    if(req.files === null) return res.status(400).json({msg: 'no file uploader'})
+    if(req.files === null) return res.status(400).json({msg: 'no file uploader'}) 
     const file = req.files.image
-    file.mv(`${__dirname}/${path}/${file.name} `)
+
+    file.mv(`${__dirname}/${pathProduct}/${file.name}`, err => {
+      if(err)
+        console.error(err);
+        return res.status(500).send(err)
+    })
+
     db.query(`
-      INSERT INTO products (product_name, price, user_id, category, content, picture, is_active) 
-      VALUES ('${req.body.productName}','${req.body.price}','1','${req.body.category}','${req.body.content}','${file.name}', '0')
-    `)
-    res.json("Product posted").status(200)
-  }catch(err){
-    res.status(500).send(err)
-  }
+      INSERT INTO products (product_name, price, user_id, category, content, path, is_active) 
+      VALUES ('${req.body.productName}','${req.body.price}','${req.body.userId}','${req.body.category}','${req.body.content}','${file.name}', '0')
+    `), err => {
+      if(err)
+        console.error(err)
+        return res.status(500).send(err)
+    }
+    return res.json({ body: req.body , fileName: file.name})
+  })
+
+router.get('/createProducts', async (req, res) => {
+  db.query('SELECT * FROM products', function(err, result){
+    try{  
+      return res.json({result}).status(200)
+    }catch(err){
+      return res.send(500).send("Cannot get all Product", err)
+    } 
+  })
+})
+
+router.get('/createProducts/:id', async (req, res) => {
+  db.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, result){
+    try{  
+      return res.json(result).status(200)
+    }catch(err){
+      return res.send(500).send(`Cannot get product on user_id = ${req.params.id} `, err)
+    } 
+  })
+})
+
+router.put('/cccc/:id', async (req,res) => {
+// PUT
+
+
+})
+
+router.delete('/createProducts/:id', async (req, res) => {
+  de.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, result) {
+    try{
+      // DELETE
+    }catch(err){
+      return res.send(500).send(`Cannot delete product on user_id = "${req.params.id}" `, err)
+    }
+  })
 })
 
 module.exports = router
