@@ -35,7 +35,7 @@ class Cards extends React.Component{
     })
 
     return(
-      <div>
+      <div id="container_cards">
         { products }
       </div>
     )
