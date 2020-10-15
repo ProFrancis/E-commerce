@@ -75,9 +75,9 @@ router.post('/createProducts',(req, res) => {
   })
 
 router.get('/createProducts', async (req, res) => {
-  db.query('SELECT * FROM products', function(err, result){
+  db.query('SELECT * FROM products', function(err, response){
     try{  
-      return res.json({result}).status(200)
+      return res.json(response).status(200)
     }catch(err){
       return res.send(500).send("Cannot get all Product", err)
     } 
@@ -85,9 +85,9 @@ router.get('/createProducts', async (req, res) => {
 })
 
 router.get('/createProducts/:id', async (req, res) => {
-  db.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, result){
+  db.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, response){
     try{  
-      return res.json(result).status(200)
+      return res.json(response).status(200)
     }catch(err){
       return res.send(500).send(`Cannot get product on user_id = ${req.params.id} `, err)
     } 
@@ -101,7 +101,7 @@ router.put('/cccc/:id', async (req,res) => {
 })
 
 router.delete('/createProducts/:id', async (req, res) => {
-  de.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, result) {
+  de.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, response) {
     try{
       // DELETE
     }catch(err){

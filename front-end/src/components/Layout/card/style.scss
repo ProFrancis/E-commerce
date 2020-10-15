@@ -2,7 +2,9 @@ $color-white: #ffff;
 $color-border: #d0dbe3;
 $color-button-border: #009688;
 $color-button-background: #6abe7b;
-
+#block_Card{
+  display: flex;
+}
 #card{
   width: 250px;
   height: 395px;
@@ -19,6 +21,16 @@ $color-button-background: #6abe7b;
     left: 0;
     width: 100%;
     z-index: 4;
+    background-color: #ffff;
+  }
+  p:nth-child(2n)::before{
+    content: '';
+    left: 0;
+    width: 100%;
+    top: -250px;
+    height: 16rem;
+    position: absolute;
+    background-color: $color-white;
   }
   p:nth-child(2n){
     z-index: 2;
@@ -51,11 +63,11 @@ $color-button-background: #6abe7b;
     height: 460px;
     p:nth-child(3n){
       opacity: 1;
-      transform: translateY(380px);
+      transform: translateY(381px);
     }
     button{
       opacity: 1;
-      transform: translateY(380px);
+      transform: translateY(381px);
     }
   }
 }
