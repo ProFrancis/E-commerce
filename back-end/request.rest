@@ -32,7 +32,7 @@ content-type: application/json
 }
 
 ###
-GET http://localhost:3001/createProducts
+GET http://localhost:3001/products
 content-type: application/json
 
 ###
@@ -41,3 +41,9 @@ GET http://localhost:3001/createProducts/1
 content-type: application/json
 
 ###
+GET http://localhost:3001/users
+content-type: application/json
+
+###
+GET http://localhost:3001/users/2
+content-type: application/json

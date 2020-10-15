@@ -36,7 +36,7 @@ class CreateProducts extends React.Component{
     formData.append('content', this.state.content)
 
     try{
-      const res = await axios.post('http://localhost:3001/createProducts', formData, {
+      const res = await axios.post('http://localhost:3001/products', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

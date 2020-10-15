@@ -9,16 +9,19 @@ const pathProduct = '../../../front-end/public/products'
 const addTables = require('../config/tables.js')
 
 router.post('/sign-up', (req, res) => {
-  const {fname, lname, email} = req.body 
-  const pass = bcrypt.hashSync(req.body.password, 10)
-  const sql = `INSERT INTO users (first_name, last_name, email, password) VALUES ('${fname}', '${lname}', '${email}','${pass}')`
-
-  db.query(`SELECT * FROM users WHERE email = '${email}'`, (err, results) => {
+  const { fname, lname, email, password } = req.body 
+  const pass = bcrypt.hashSync(password, 10)
+  const insertsql = `INSERT INTO users (first_name, last_name, email, password) VALUES ('${fname}', '${lname}', '${email}','${pass}')`
+  const selectsql = `SELECT * FROM users WHERE email = '${email}'`
+  
+  db.query(selectsql, (err, results) => {
     if (err) throw err
     if(results.length){
-      res.status(400).send('This email already registered !')
+      res.status(409).json({message: 'This email already registered !'})
     } else {
-      db.query(sql, (err) => { res.status(200).send('successfully registered') })
+      db.query(insertsql, (err) => { 
+        res.status(200).json({message: 'successfully registered'}) 
+      })
     }  
   })
 })
@@ -33,10 +36,33 @@ router.post('/sign-up', (req, res) => {
       let token = jwt.sign({userId: results[0].id, email: results[0].email, userName: results[0].name}, 'usersecret')
       res.status(201).send({auth: true, token: token}) 
     } else if(!results[0]) {
-      res.status(400).send({hasAccount: false ,msg: "Sorry, this user isn't recognized"})
+      res.status(500).send({hasAccount: false, msg: "Sorry, this user isn't recognized"})
     } else {
-      res.status(400).send({hasAccount: true, msg: "Wrong password, try again !"})
+      res.status(500).send({hasAccount: true, msg: "Wrong password, try again !"})
     } 
+  })
+})
+
+.get('/users', (req, res) => {
+  db.query(`SELECT * FROM users INNER JOIN products WHERE users.id = products.user_id`, (err, results) => {
+    if (err) {
+      console.log(err)
+      return res.status(500).json(err)
+    }
+    results.forEach(elm => delete elm.password) 
+    res.status(201).json(results) 
+  })
+})
+
+.get('/users/:id', (req, res) => {
+  const { id } = req.params
+  db.query(`SELECT * FROM users INNER JOIN products WHERE users.id = ${id} and products.user_id = ${id}`, (err, results) => {
+    if (err) {
+      console.log(err)
+      return res.status(500).json(err)
+    }
+    results.forEach(elm => delete elm.password) 
+    res.status(201).json(results) 
   })
 })
 

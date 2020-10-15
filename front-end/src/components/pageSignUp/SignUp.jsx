@@ -29,8 +29,7 @@ export class SignUp extends Component {
     const {firstName, lastName, email, password, confPassword} = this.state
     try {
       if(password !== confPassword){
-        this.setState({msg: "the password doesn't match !"})
-        return false
+        return this.setState({msg: "the password doesn't match !"})
       } 
         
       const signUpReq = await axios.post('http://localhost:3001/sign-up', {
@@ -41,21 +40,21 @@ export class SignUp extends Component {
       })
       const res = await signUpReq
       Object.keys(this.state).forEach(elm => this.setState({[elm]: ''}))
-      this.setState({msg: res.data})
+      this.setState({msg: res.data.message})
       
       event.target.reset()
 
     } catch (error) {
       console.log(error)
-      error.response && this.setState({msg: error.response.data})
+      error.response && this.setState({msg: error.response.data.message})
     }
   }
 
   render() {
     return (
       <div id='signUp'>
-        <p>{this.state.msg}</p>
         <Form onSubmit={this.handleSubmit} className="ml-5 w-25 text-left">
+          <p style={{color: 'white'}}>{this.state.msg}</p>
           <Form.Group controlId="formBasicFirstName">
             <Form.Control type="text" name='firstName' onChange={this.handleInput} placeholder="First Name" required/>
             <Form.Label>First Name</Form.Label>
