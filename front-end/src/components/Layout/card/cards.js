@@ -23,20 +23,18 @@ class Cards extends React.Component{
   }
 
   render(){
-    let products = this.state.products.map((product,i) => {
-      return (
-      <div key={i} id="card" >
-        <img src={require(`../../../../public/products/${product.path}`)} alt={product.product_name} whidth="250px"/>
-        <p>{product.product_name}</p>
-        <p>{product.price} $</p>
-        <button>Buy Now</button>
-      </div>
-      );
-    })
-
     return(
       <div id="container_cards">
-        { products }
+        {this.state.products.map((product,i) => {
+          return (
+            <div key={i} id="card">
+              <img src={require(`../../../../public/products/${product.path}`)} alt={product.product_name} whidth="250px"/>
+              <p>{product.product_name}</p>
+              <p>{product.price} $</p>
+              <button>Buy Now</button>
+            </div>
+          )}
+        )}
       </div>
     )
   }
