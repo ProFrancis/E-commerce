@@ -25,7 +25,7 @@ $color-button-background: #6abe7b;
     width: 100%;
     position: absolute;
     padding: 9px 0px 8px 0px;
-    transform: translateY(339px);
+    transform: translateY(345px);
     background-color:$color-white;
   }
   p{
@@ -48,14 +48,14 @@ $color-button-background: #6abe7b;
     background-color: $color-button-background;
   }
   &:hover{
-    height: 450px;
+    height: 460px;
     p:nth-child(3n){
       opacity: 1;
-      transform: translateY(390px);
+      transform: translateY(380px);
     }
     button{
       opacity: 1;
-      transform: translateY(390px);
+      transform: translateY(380px);
     }
   }
 }

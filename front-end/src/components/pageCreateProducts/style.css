@@ -17,19 +17,19 @@
   border-bottom: 2px solid #ffffff;
 }
 
-#bodyCreateProducts ::-webkit-input-placeholder, #bodyCreateProducts select option:first-child, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+#bodyCreateProducts ::-webkit-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
   color: #fff;
 }
 
-#bodyCreateProducts :-ms-input-placeholder, #bodyCreateProducts select option:first-child, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+#bodyCreateProducts :-ms-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
   color: #fff;
 }
 
-#bodyCreateProducts ::-ms-input-placeholder, #bodyCreateProducts select option:first-child, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+#bodyCreateProducts ::-ms-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
   color: #fff;
 }
 
-#bodyCreateProducts ::placeholder, #bodyCreateProducts select option:first-child, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+#bodyCreateProducts ::placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
   color: #fff;
 }
 

@@ -25,8 +25,8 @@
   width: 100%;
   position: absolute;
   padding: 9px 0px 8px 0px;
-  -webkit-transform: translateY(339px);
-          transform: translateY(339px);
+  -webkit-transform: translateY(345px);
+          transform: translateY(345px);
   background-color: #ffff;
 }
 
@@ -55,18 +55,18 @@
 }
 
 #card:hover {
-  height: 450px;
+  height: 460px;
 }
 
 #card:hover p:nth-child(3n) {
   opacity: 1;
-  -webkit-transform: translateY(390px);
-          transform: translateY(390px);
+  -webkit-transform: translateY(380px);
+          transform: translateY(380px);
 }
 
 #card:hover button {
   opacity: 1;
-  -webkit-transform: translateY(390px);
-          transform: translateY(390px);
+  -webkit-transform: translateY(380px);
+          transform: translateY(380px);
 }
 /*# sourceMappingURL=style.css.map */

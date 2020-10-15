@@ -57,14 +57,14 @@ class CreateProducts extends React.Component{
         <Nav/>
         <Container>
           <Row className="justify-content-md-center justify-content-xs-center">
-            <form class="col-xs-12 col-md-8 col-sm-12"
+            <form className="col-xs-12 col-md-8 col-sm-12"
               onSubmit={this.handleSubmit}
             >
               <Col md={12} xs={12}>
-              <div class="divForm">
+              <div className="divForm">
                 <input 
                   type="text" 
-                  class="sieze" 
+                  className="sieze" 
                   name="productName" 
                   placeholder="Product Name" 
                   onChange={this.handleChange} 
@@ -72,14 +72,14 @@ class CreateProducts extends React.Component{
                 <input 
                   name="prix" 
                   type="text" 
-                  class="sieze" 
+                  className="sieze" 
                   placeholder="Prix" 
                   onChange={this.handleChange}
                 />
               </div>
               </Col>
               <Col md={12} xs={12}>
-                <div class="divForm">
+                <div className="divForm">
                   <select name="category" onChange={this.handleChange}>
                     <option defaultValue>Category</option>
                     <option value="h">Homme</option>
@@ -89,10 +89,10 @@ class CreateProducts extends React.Component{
                     id="file" 
                     type="file" 
                     name="picture" 
-                    class="inputfile" 
+                    className="inputfile" 
                     onChange={this.handleChangeFile}
                   />
-                  <label for="file">Choose a file</label>
+                  <label htmlFor="file">Choose a file</label>
                 </div>
               </Col>
               <Col>

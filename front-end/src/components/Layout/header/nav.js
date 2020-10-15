@@ -9,9 +9,9 @@ class Nav extends React.Component{
         <header>
         {window.location.href === "http://localhost:3000/" || window.location.href === "http://localhost:3000/CreateProducts" ? 
           <div>
-            <h1 class="style">MWF</h1> 
+            <h1 className="style">MWF</h1> 
             <div>
-              <button class="style">connexion</button>
+              <button className="style">connexion</button>
             </div>
           </div>
         : 
