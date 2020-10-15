@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: "",
-  database: 'e_commerce-wf'
+  database: 'e-commerce'
 })
 
 connection.connect(async function(err) {

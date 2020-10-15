@@ -2,10 +2,10 @@ POST http://localhost:3001/sign-up HTTP/1.1
 content-type: application/json
 
 {
-  "fname": "aa",
-  "lname": "Wed",
+  "fname": "bb",
+  "lname": "bbbb",
   "email": "aa@aa.a",
-  "password": "pass"
+  "password": "pas"
 }
 
 ###

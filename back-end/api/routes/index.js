@@ -41,19 +41,20 @@ router.post('/sign-up', (req, res) => {
 })
 
 router.post('/createProducts', async (req, res) => {
-  try{
-    addTables.addProductsTable(db)
-    if(req.files === null) return res.status(400).json({msg: 'no file uploader'})
-    const file = req.files.image
-    file.mv(`${__dirname}/${path}/${file.name} `)
-    db.query(`
-      INSERT INTO products (product_name, price, user_id, category, content, picture, is_active) 
-      VALUES ('${req.body.productName}','${req.body.price}','1','${req.body.category}','${req.body.content}','${file.name}', '0')
-    `)
-    res.json("Product posted").status(200)
-  }catch(err){
-    res.status(500).send(err)
-  }
+  // try{
+    // addTables.addProductsTable(db)
+  //   if(req.files === null) return res.status(400).json({msg: 'no file uploader'})
+  //   const file = req.files.image
+  //   file.mv(`${__dirname}/${path}/${file.name} `)
+  //   db.query(`
+  //     INSERT INTO products (product_name, price, user_id, category, content, picture, is_active) 
+  //     VALUES ('${req.body.productName}','${req.body.price}','1','${req.body.category}','${req.body.content}','${file.name}', '0')
+  //   `)
+  //   res.json("Product posted").status(200)
+  // }catch(err){
+  //   res.status(500).send(err)
+  // }
+  res.json('done')
 })
 
 module.exports = router
