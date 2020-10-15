@@ -1,3 +1,14 @@
+#container_cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,15 +25,5 @@ section #navHome {
 
 section #navHome li {
   margin: 0.5em;
-}
-
-section #itemsCards {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */

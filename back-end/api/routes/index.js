@@ -52,7 +52,7 @@ router.post('/sign-up', (req, res) => {
 
 
 
-router.post('/createProducts',(req, res) => {
+router.post('/products',(req, res) => {
     addTables.addProductsTable(db)
     if(req.files === null) return res.status(400).json({msg: 'no file uploader'}) 
     const file = req.files.image
@@ -74,20 +74,20 @@ router.post('/createProducts',(req, res) => {
     return res.json({ body: req.body , fileName: file.name})
   })
 
-router.get('/createProducts', async (req, res) => {
-  db.query('SELECT * FROM products', function(err, result){
+router.get('/products', async (req, res) => {
+  db.query('SELECT * FROM products', function(err, response){
     try{  
-      return res.json({result}).status(200)
+      return res.json(response).status(200)
     }catch(err){
       return res.send(500).send("Cannot get all Product", err)
     } 
   })
 })
 
-router.get('/createProducts/:id', async (req, res) => {
-  db.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, result){
+router.get('/products/:id', async (req, res) => {
+  db.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, response){
     try{  
-      return res.json(result).status(200)
+      return res.json(response).status(200)
     }catch(err){
       return res.send(500).send(`Cannot get product on user_id = ${req.params.id} `, err)
     } 
@@ -101,7 +101,7 @@ router.put('/cccc/:id', async (req,res) => {
 })
 
 router.delete('/createProducts/:id', async (req, res) => {
-  de.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, result) {
+  de.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, response) {
     try{
       // DELETE
     }catch(err){

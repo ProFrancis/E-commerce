@@ -1,3 +1,8 @@
+#container_cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 section{
   display: flex;
@@ -7,10 +12,5 @@ section{
     li{
       margin: 0.5em;
     }
-  }
-  #itemsCards{
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
 }
