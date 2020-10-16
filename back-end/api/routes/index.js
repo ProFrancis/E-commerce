@@ -3,6 +3,7 @@ const router = express.Router()
 const db = require('../database/connection.js')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const checkAuth = require('../middleware/checkAuth')
 
 // Utils config
 const pathProduct = '../../../front-end/public/products'
@@ -33,12 +34,16 @@ router.post('/sign-up', (req, res) => {
     if (err) throw err
 
     if(results[0] && bcrypt.compareSync(password, results[0].password)){
-      let token = jwt.sign({userId: results[0].id, email: results[0].email, userName: results[0].name}, 'usersecret')
+      let token = jwt.sign(
+        { userId: results[0].id, email: results[0].email, userName: results[0].name },
+        'itssecretso', 
+        { expiresIn: '1h' }
+      )
       res.status(201).send({auth: true, token: token}) 
     } else if(!results[0]) {
-      res.status(500).send({hasAccount: false, msg: "Sorry, this user isn't recognized"})
+      res.status(404).send({hasAccount: false, msg: "Sorry, this user isn't recognized"})
     } else {
-      res.status(500).send({hasAccount: true, msg: "Wrong password, try again !"})
+      res.status(401).send({hasAccount: true, msg: "Wrong password, try again !"})
     } 
   })
 })
@@ -78,7 +83,7 @@ router.post('/sign-up', (req, res) => {
 
 
 
-router.post('/products',(req, res) => {
+router.post('/products', checkAuth, (req, res) => {
     addTables.addProductsTable(db)
     if(req.files === null) return res.status(400).json({msg: 'no file uploader'}) 
     const file = req.files.image

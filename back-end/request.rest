@@ -19,7 +19,7 @@ content-type: application/json
 }
 
 ###
-POST  http://localhost:3001/createProducts
+POST  http://localhost:3001/products
 content-type: application/json
 
 {
