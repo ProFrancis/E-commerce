@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.css'
 import video from '../../asset/videos/pub3.mp4'
+
 class Accueil extends React.Component{
   render(){
     return(

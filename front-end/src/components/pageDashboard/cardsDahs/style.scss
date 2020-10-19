@@ -1,0 +1,73 @@
+$color-white: #ffff;
+$color-border: #d0dbe3;
+$color-button-border: #009688;
+$color-button-background: #6abe7b;
+#block_Card{
+  display: flex;
+}
+#card{
+  width: 250px;
+  height: 395px;
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
+  position: relative;
+  margin: 0px 20px 20px 0px;
+  border: 1px solid $color-border;
+  font-family: 'SF Pro UltraLight';
+  img{
+    object-fit: contain;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    background-color: #ffff;
+  }
+  p:nth-child(2n)::before{
+    content: '';
+    left: 0;
+    width: 100%;
+    top: -250px;
+    height: 16rem;
+    position: absolute;
+    background-color: $color-white;
+  }
+  p:nth-child(2n){
+    z-index: 2;
+    width: 100%;
+    position: absolute;
+    padding: 9px 0px 8px 0px;
+    transform: translateY(345px);
+    background-color:$color-white;
+  }
+  p{
+    margin: 5px 0px 5px 0px;
+  }
+  p:nth-child(3n){
+    opacity: 0;
+    z-index: 0;
+    transition: all 0.75s;
+  }
+  button{
+    z-index: 0;
+    opacity: 0;
+    padding: 5px;
+    cursor: pointer;
+    color:$color-white;
+    border-radius: 10px;
+    transition: all 0.65s;
+    border: 1px solid $color-button-border;
+    background-color: $color-button-background;
+  }
+  &:hover{
+    height: 460px;
+    p:nth-child(3n){
+      opacity: 1;
+      transform: translateY(381px);
+    }
+    button{
+      opacity: 1;
+      transform: translateY(381px);
+    }
+  }
+}
