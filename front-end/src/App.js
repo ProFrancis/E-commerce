@@ -40,11 +40,13 @@ function App() {
             <Route exact path="/CreateProducts">
               <CreateProducts/>
             </Route>
+            <Route exact path="/Dashboard">
+              <Dashboard/>
+            </Route>
           </Switch>
         </Router>
       </div>
     </Provider>  
   );
 }
-
 export default App;

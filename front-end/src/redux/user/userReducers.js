@@ -14,5 +14,4 @@ const signUpReducer = (state = initialState, action) => {
     default: return state
   }
 }
-
-export { signUpReducer }  
+export { signUpReducer }
