@@ -5,3 +5,12 @@
 #block_Dash{
   display: flex;
 }
+
+#navDash{
+  a{
+    text-decoration: none;
+    &:hover{
+      color: black;
+    }
+  }
+}
