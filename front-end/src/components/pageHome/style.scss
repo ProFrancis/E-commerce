@@ -3,14 +3,3 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
-section{
-  display: flex;
-  flex-direction: row;
-  #navHome{
-    padding: 1em;
-    li{
-      margin: 0.5em;
-    }
-  }
-}

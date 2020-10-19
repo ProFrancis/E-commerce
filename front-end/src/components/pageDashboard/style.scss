@@ -1,0 +1,19 @@
+#bodyDash{
+  display: flex;
+  flex-direction: column;
+}
+#block_Dash{
+  display: flex;
+  nav{
+    position: fixed;
+  }
+}
+
+#navDash{
+  a{
+    text-decoration: none;
+    &:hover{
+      color: black;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+#bodyDash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#block_Dash {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#block_Dash nav {
+  position: fixed;
+}
+
+#navDash a {
+  text-decoration: none;
+}
+
+#navDash a:hover {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

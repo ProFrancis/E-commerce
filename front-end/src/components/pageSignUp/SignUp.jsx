@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Form, Button} from 'react-bootstrap'
 import './style.css'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export class SignUp extends Component {
   constructor(props) {
@@ -85,6 +86,7 @@ export class SignUp extends Component {
 
           <Button variant="primary" type="submit">Sign UP</Button>
         </Form>
+        <Link to="/signin">Sign In</Link>
       </div>
     )
   }

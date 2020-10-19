@@ -12,8 +12,10 @@ $font-ultra-ligt: "SF Pro ultralight";
       font-size: 1.5em;
       font-family: $font-ultra-ligt;
     }
-    .style{
-      color: #fff;
+    link{
+      a{
+        color: #fff;
+      }
     }
     div{
       width: 100%;
@@ -27,13 +29,13 @@ $font-ultra-ligt: "SF Pro ultralight";
       //   border-radius: 100%;
       //   background-color: red;
       // }
-      button{
+      a{
+        cursor: pointer;
         border: none;
+        text-decoration: none;
         font-size: 1.5em;
-        background-color: transparent;
         font-family: $font-ultra-ligt;
       }
     }
-
   }
 }

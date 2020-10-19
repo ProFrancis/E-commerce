@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 
 // LAYOUT 
-import Header from './components/Layout/header/nav'
+import Header from './components/Layout/header'
 
 // COMPONENTS
 import Accueil from './components/pageAccueil'
@@ -13,6 +13,7 @@ import Home from './components/pageHome'
 import SignUp from './components/pageSignUp/SignUp';
 import SignIn from './components/pageSignIn/SignIn';
 import CreateProducts from './components/pageCreateProducts';
+import Dashboard from './components/pageDashboard';
 
 
 function App() {

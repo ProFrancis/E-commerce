@@ -12,15 +12,7 @@ class Home extends React.Component{
       <div>
         <Nav/>
         <Container>
-          <section>
-            <div id="navHome">
-              <ul>
-                <li>Femme</li>
-                <li>Homme</li>
-              </ul>
-            </div>
-              <Cards/>
-          </section>
+          <Cards/>
         </Container>
       </div>
     )
