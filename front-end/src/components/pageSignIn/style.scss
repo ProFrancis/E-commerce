@@ -1,12 +1,15 @@
 #signIn {
   top: 0;
+  left: 0;
   z-index: -1;
+  width: 100%;
   position: fixed;
-  min-width: 100%;
   min-height: 100%;
+  overflow: hidden;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-image: url("../../asset/img/background_sign_in.svg");
+  background-image: url("../../asset/img/a8lcv-d12ts.svg");
   form {
     margin-top: 15vh;
     .form-group {

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // LAYOUT 
-import Header from './components/Layout/header/nav'
+import Header from './components/Layout/header'
 
 // COMPONENTS
 import Accueil from './components/pageAccueil'
@@ -11,6 +11,7 @@ import Home from './components/pageHome'
 import SignUp from './components/pageSignUp/SignUp';
 import SignIn from './components/pageSignIn/SignIn';
 import CreateProducts from './components/pageCreateProducts';
+import Dashboard from './components/pageDashboard';
 
 
 function App() {
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route exact path="/CreateProducts">
             <CreateProducts/>
+          </Route>
+          <Route exact path="/Dashboard">
+            <Dashboard/>
           </Route>
         </Switch>
       </Router>
