@@ -13,4 +13,12 @@
   display: -ms-flexbox;
   display: flex;
 }
+
+#navDash a {
+  text-decoration: none;
+}
+
+#navDash a:hover {
+  color: black;
+}
 /*# sourceMappingURL=style.css.map */

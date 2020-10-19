@@ -39,6 +39,7 @@ video{
   margin-left: 115px;
   position: absolute;
   letter-spacing: 8px;
+  text-decoration: none;
   font-family: "SF Pro Light";
 }
 #svg:hover .stroke {

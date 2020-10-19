@@ -8,22 +8,4 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-
-section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-section #navHome {
-  padding: 1em;
-}
-
-section #navHome li {
-  margin: 0.5em;
-}
 /*# sourceMappingURL=style.css.map */

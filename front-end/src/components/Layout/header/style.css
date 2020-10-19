@@ -21,7 +21,7 @@
   font-family: "SF Pro ultralight";
 }
 
-#layoutHeader header .style {
+#layoutHeader header link a {
   color: #fff;
 }
 
@@ -37,10 +37,11 @@
           justify-content: flex-end;
 }
 
-#layoutHeader header div button {
+#layoutHeader header div a {
+  cursor: pointer;
   border: none;
+  text-decoration: none;
   font-size: 1.5em;
-  background-color: transparent;
   font-family: "SF Pro ultralight";
 }
 /*# sourceMappingURL=style.css.map */

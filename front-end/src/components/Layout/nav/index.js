@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './style.css';
 
 
@@ -10,23 +10,19 @@ class Nav extends React.Component{
         {window.location.href === "http://localhost:3000/CreateProducts" ? 
           <nav>
             <ul id="ulNav">
-              <li><a href="#" className="nav">Home</a></li>
-              <li><a href="#" className="nav">Home</a></li>
-              <li><a href="#" className="nav">Home</a></li>
-              <li><a href="#" className="nav">Home</a></li>
-              <li><a href="#" className="nav">Home</a></li>
-              <li><a href="#" className="nav">Home</a></li>
+              <li><Link to="/home">Home</Link></li>
+              <li><Link to="home">Homme</Link></li>
+              <li><Link to="femme">Femme</Link></li>
+              <li><Link to="/dashboard">Dashboard</Link></li>
             </ul>
           </nav>
         : 
         <nav>
           <ul id="ulNav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Home</a></li>
+            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/home">Homme</Link></li>
+            <li><Link to="/home">Femme</Link></li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
           </ul>
         </nav>
         }

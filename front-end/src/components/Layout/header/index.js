@@ -1,24 +1,26 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+
 import './style.css'
 
-class Nav extends React.Component{
+class Header extends React.Component{
   render(){
     console.log(window.location.href)
     return(
       <div id="layoutHeader">
         <header>
-        {window.location.href === "http://localhost:3000/" || window.location.href === "http://localhost:3000/CreateProducts" ? 
-          <div>
-            <h1 className="style">MWF</h1> 
+        {window.location.href === "http://localhost:3000" || window.location.href === "http://localhost:3000/CreateProducts" ? 
+          <div className="link">
+            <Link to="/">MWF</Link> 
             <div>
-              <button className="style">connexion</button>
+              <Link to="signIn">connexion</Link>            
             </div>
           </div>
         : 
         <div>
-          <h1>MWF</h1>
+          <Link to="/">MWF</Link>
           <div>
-            <button>connexion</button>
+            <Link to="/signIn">connexion</Link>
           </div>
         </div>
         }
@@ -27,4 +29,4 @@ class Nav extends React.Component{
     )
   }
 }
-export default Nav;
+export default Header;
