@@ -1,4 +1,4 @@
-import { SIGN_UP } from './userActions'
+import { SIGN_UP } from '../actions/user'
 
 const initialState = {
   user: null,

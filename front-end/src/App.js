@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'
-import store from './redux/store'
+import { createStore } from 'redux'
 
 // LAYOUT 
 import Header from './components/Layout/header'
@@ -15,6 +15,11 @@ import SignIn from './components/pageSignIn/SignIn';
 import CreateProducts from './components/pageCreateProducts';
 import Dashboard from './components/pageDashboard';
 
+// REDUX
+import reducers from './redux'
+
+
+const store = createStore(reducers)
 
 function App() {
   return (
