@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
 // LAYOUT 
 import Header from './components/Layout/header/nav'
@@ -15,30 +17,32 @@ import CreateProducts from './components/pageCreateProducts';
 
 function App() {
   return (
-    <div>
-      <Router>
-        <Route path="/">
-          <Header/>        
-        </Route>
-        <Switch>
-          <Route exact path="/">
-            <Accueil/>
+    <Provider store={store}>
+      <div>
+        <Router>
+          <Route path="/">
+            <Header/>        
           </Route>
-          <Route exact path="/Home">
-            <Home/>
-          </Route>
-          <Route exact path="/SignUp">
-            <SignUp />
-          </Route>
-          <Route exact path="/SignIn">
-            <SignIn />
-          </Route>
-          <Route exact path="/CreateProducts">
-            <CreateProducts/>
-          </Route>
-        </Switch>
-      </Router>
-    </div>
+          <Switch>
+            <Route exact path="/">
+              <Accueil/>
+            </Route>
+            <Route exact path="/Home">
+              <Home/>
+            </Route>
+            <Route exact path="/SignUp">
+              <SignUp />
+            </Route>
+            <Route exact path="/SignIn">
+              <SignIn />
+            </Route>
+            <Route exact path="/CreateProducts">
+              <CreateProducts/>
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </Provider>  
   );
 }
 
