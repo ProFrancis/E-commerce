@@ -1,31 +1,20 @@
 import React from 'react'
-import axios from 'axios'
+import { connect } from 'react-redux'
+import { getProducts } from '../../../redux/actions/productsActions'
 
 import './style.css'
 
 class Cards extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      products: []
-    }
-  }
 
   async componentDidMount(){
-    try{
-      const response = await axios.get('http://localhost:3001/products')
-      const products = await response.data
-      if(response.status !== 200) throw Error(response.statusText)
-      this.setState({ products })
-    }catch(err){
-      console.error(err)
-    }
+    this.props.getProducts()
   }
 
   render(){
+    const { products } = this.props.products
     return(
       <div id="container_cards">
-        {this.state.products.map((product,i) => {
+        {products.map((product,i) => {
           return (
             <div key={i} id="card">
               <img src={require(`../../../../public/products/${product.path}`)} alt={product.product_name} whidth="250px"/>
@@ -39,4 +28,6 @@ class Cards extends React.Component{
     )
   }
 } 
-export default Cards;
+
+const mapStateToProps = state => ({products: state.products})
+export default connect(mapStateToProps, {getProducts})(Cards)

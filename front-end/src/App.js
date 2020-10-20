@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 // LAYOUT 
 import Header from './components/Layout/header'
@@ -16,10 +18,10 @@ import CreateProducts from './components/pageCreateProducts';
 import Dashboard from './components/pageDashboard';
 
 // REDUX
-import reducers from './redux'
+import rootReducer from './redux'
+const middleware = [thunk]
 
-
-const store = createStore(reducers)
+const store = createStore( rootReducer, composeWithDevTools(applyMiddleware(...middleware)) )
 
 function App() {
   return (
