@@ -1,8 +1,11 @@
+import { Form } from 'react-bootstrap'
 import { combineReducers } from 'redux'
 import { signUpReducer } from './reducers/userReducers'
+import products  from './reducers/productsReducers'
 
-const reducers = combineReducers({
-  signUpReducer
+const rootReducer = combineReducers({
+  signUpReducer,
+  products: products,
 })
 
-export default reducers
+export default rootReducer
