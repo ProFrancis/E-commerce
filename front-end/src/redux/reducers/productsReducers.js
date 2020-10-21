@@ -10,7 +10,7 @@ export default function(state= initialState, action){
     case LIST_PRODUCT:
       return {
         ...state,
-        products:action.payload,
+        products: action.products,
         loading: !state.loading
       }
       default: return state

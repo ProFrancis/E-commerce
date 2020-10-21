@@ -9,13 +9,13 @@ export const getProducts = () => async dispatch => {
     const res = await axios.get(`http://localhost:3001/products`)
     dispatch({
       type: LIST_PRODUCT,
-      payload: res.data
+      products: res.data
     })
   }
   catch(e){
     dispatch({
       type: LIST_PRODUCT_ERROR,
-      payload: console.log(e)
+      products: console.log(e)
     })
   }
 }
