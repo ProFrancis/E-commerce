@@ -2,7 +2,7 @@ import {  LIST_PRODUCT } from '../types/productsTypes'
 
 const initialState = {
   products: [],
-  loading: true
+  loading: false
 }
 
 export default function(state= initialState, action){
@@ -10,8 +10,8 @@ export default function(state= initialState, action){
     case LIST_PRODUCT:
       return {
         ...state,
-        products:action.payload,
-        loading:false
+        products: action.products,
+        loading: !state.loading
       }
       default: return state
   }
