@@ -10,25 +10,83 @@ class Cards extends React.Component{
     this.props.getProducts()
   }
 
-  femme 
+   pageHome = (products) => {
+    if(products && products.length !== 0){ 
+      products.map(product => {
+        return (
+          <div key={product.id} id="card">
+            <img src={product.path} alt={product.product_name} whidth="250px"/>
+            <p>{product.product_name}</p>
+            <p>{product.price} $</p>
+            <button>Buy Now</button>
+          </div>
+        )}
+      )
+    }else{
+      return(
+        <p>Loading...</p>
+      )
+    }
+  }
+
+  pageFemme = (products) => {
+    if(products && products.length !== 0){
+      products.map(product => {
+        if (product.category === "f")
+          return (
+            <div key={product.id} id="card">
+              <img src={product.path} alt={product.product_name} whidth="250px"/>
+              <p>{product.product_name}</p>
+              <p>{product.price} $</p>
+              <button>Buy Now</button>
+            </div>
+          )
+      })
+    }else {
+      return (
+        <p>Loading...</p>
+      )
+    }
+  }
+
+  pageHomme = (products) => {
+    if(products && products.length !== 0){ 
+      products.map(product => {
+        if (product.category === "h")
+          return (
+            <div key={product.id} id="card">
+              <img src={product.path} alt={product.product_name} whidth="250px"/>
+              <p>{product.product_name}</p>
+              <p>{product.price} $</p>
+              <button>Buy Now</button>
+            </div>
+          )
+      })
+    }else{
+      return(
+        <p>Loading...</p>
+      )
+    }
+  }
+
+  renderSwitch = (url, products) => {
+    switch(url){
+      case 'http://localhost:3000/homme':
+        return this.pageHomme(products)
+      case 'http://localhost:3000/femme': 
+        return this.pageFemme(products)
+      default:
+        return this.pageHome(products)
+    }
+  }
+
   render(){
     const { products } = this.props.products
+    const url = window.location.href
+    console.log(url)
     return(
       <div id="container_cards">
-        {products && products.length !== 0 ?
-          products.map(product => {
-            return (
-              <div key={product.id} id="card">
-                <img src={product.path} alt={product.product_name} whidth="250px"/>
-                <p>{product.product_name}</p>
-                <p>{product.price} $</p>
-                <button>Buy Now</button>
-              </div>
-            )}
-          )
-        :
-          <p>Loading...</p>
-        }
+        {this.renderSwitch(url, products)}
       </div>
     )
   }
