@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import {Form, Button} from 'react-bootstrap'
+import {Form, Button, Alert} from 'react-bootstrap'
 import './style.css'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { signIn } from '../../redux/actions/authActions'
+import { clearErrors } from '../../redux/actions/errorActions'
+import errorReducer from '../../redux/reducers/errorReducer'
 
-export class SignIn extends Component {
+class SignIn extends Component {
   constructor(props) {
     super(props)
   
@@ -15,37 +18,42 @@ export class SignIn extends Component {
     }
   }
   
-  handleInput = (event) => {
-    let nam = event.target.name
-    let val = event.target.value
-    this.setState({[nam]: val})
+  handleInput = (e) => {
+    this.setState({[e.target.name]: e.target.value})
   }
 
-  handleSubmit = async (event) => {
-    event.persist()
+  handleSubmit = (event) => {
+    // event.persist()
     event.preventDefault()
+
     const {email, password} = this.state
-    try {
-      const signInReq = await axios.post('http://localhost:3001/sign-in', {
-        email: email,
-        password: password
-      })
-      const res = await signInReq
-      console.log(res)
-      Object.keys(this.state).forEach(elm => this.setState({[elm]: ''}))
-      this.setState({msg: res})
-      // redirect
-    } catch (error) {
-      console.log(error)
-      error.response && this.setState({msg: error.response.data.msg})
+    const user = { email, password }
+    this.props.signIn(user)
+
+    Object.keys(this.state).forEach(elm => this.setState({[elm]: ''}))
+    if (this.props.error.id === 'SIGNIN_FAIL') {
+      this.setState({msg: this.props.error.msg})
+    } else {
+      this.setState({msg: null})
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { error } = this.props
+    if(error !== prevProps.error) {
+      if (error.id === 'SIGNIN_FAIL') {
+        this.setState({msg: error.msg})
+      } else {
+        this.setState({msg: null})
+      } 
     }
   }
 
   render() {
     return (
       <div id="signIn">
-        <p>{this.state.msg}</p>
         <Form method="POST" onSubmit={this.handleSubmit}  className="mx-auto w-25 text-left">
+        {this.state.msg ? <p className='text-danger w-100' >{this.state.msg}</p> : null }
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" name='email' onChange={this.handleInput}  placeholder="Enter email" /> 
@@ -65,4 +73,9 @@ export class SignIn extends Component {
   }
 }
 
-export default SignIn
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+  error: state.error
+})
+
+export default connect(mapStateToProps, {signIn, clearErrors})(SignIn)

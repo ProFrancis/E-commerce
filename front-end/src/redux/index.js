@@ -1,10 +1,11 @@
-import { Form } from 'react-bootstrap'
 import { combineReducers } from 'redux'
-import { signUpReducer } from './reducers/userReducers'
-import products  from './reducers/productsReducers'
+import authReducer  from './reducers/authReducer'
+import errorReducer from './reducers/errorReducer'
+import products  from './reducers/productsReducer'
 
 const rootReducer = combineReducers({
-  signUpReducer,
+  auth: authReducer,
+  error: errorReducer,
   products: products,
 })
 

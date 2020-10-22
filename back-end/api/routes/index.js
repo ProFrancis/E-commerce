@@ -28,7 +28,7 @@ router.post('/sign-up', (req, res) => {
 
 .post('/sign-in', (req, res) => {
   const {email, password} = req.body
-  
+  console.log(req.body)
   db.query(`SELECT * FROM users WHERE email = '${email}'`, (err, results) => {
     if (err) throw err
 
@@ -81,8 +81,7 @@ router.post('/sign-up', (req, res) => {
 //
 
 
-
-router.post('/products', async (req, res) => {
+router.post('/products', (req, res) => {
     addTables.addProductsTable(db)
     db.query(`
       INSERT INTO products (user_id, product_name, price, category, content, path, is_active) 
