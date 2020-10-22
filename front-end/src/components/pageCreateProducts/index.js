@@ -1,13 +1,13 @@
 import React from 'react'
 import Nav from '../Layout/nav'
-import axios from 'axios';
 import { connect } from 'react-redux'
+
 // REDUX
 import { addProduct } from '../../redux/actions/productsActions'
+
 // CSS
 import './style.css'
 import {Container, Row, Col } from 'react-bootstrap'
-
 
 class CreateProducts extends React.Component{
   state = {
@@ -24,20 +24,8 @@ class CreateProducts extends React.Component{
     this.setState({ [event.target.name]: event.target.value})
   }
 
-  // handleChangeFile = event => {
-  //   this.setState({ picture: event.target.files[0]})
-  // }
-
   handleSubmit =  async event => {
     event.preventDefault()
-    // const formData = new FormData()
-    // formData.append('image', this.state.picture, this.state.picture.name ) 
-    // formData.append('userId', this.state.userId)
-    // formData.append('productName', this.state.productName)
-    // formData.append('price', this.state.prix)
-    // formData.append('category', this.state.category)
-    // formData.append('content', this.state.content)
-
     const product = {
       userId: this.state.userId,
       picture: this.state.picture,
@@ -49,21 +37,6 @@ class CreateProducts extends React.Component{
     }
     console.log(" Component => ",product)
     this.props.addProduct(product)
-
-    // try{
-    //   const res = await axios.post('http://localhost:3001/products', formData, {
-    //     headers: {
-    //       'Content-Type': 'multipart/form-data'
-    //     }
-    //   }) 
-    // } catch(err){
-    //   if(err.response.status === 500){
-    //     console.log('There was a problem with  the server')
-    //   } else {
-    //     console.log(err.response.data.msg)
-    //   }
-    // }
-
   }
 
   render(){
