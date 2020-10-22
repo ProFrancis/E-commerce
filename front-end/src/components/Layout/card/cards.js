@@ -14,16 +14,20 @@ class Cards extends React.Component{
     const { products } = this.props.products
     return(
       <div id="container_cards">
-        {products.map(product => {
-          return (
-            <div key={product.id} id="card">
-              <img src={require(`../../../../public/products/${product.path}`)} alt={product.product_name} whidth="250px"/>
-              <p>{product.product_name}</p>
-              <p>{product.price} $</p>
-              <button>Buy Now</button>
-            </div>
-          )}
-        )}
+        {products.length !== 0 ?
+          products.map(product => {
+            return (
+              <div key={product.id} id="card">
+                <img src={product.path} alt={product.product_name} whidth="250px"/>
+                <p>{product.product_name}</p>
+                <p>{product.price} $</p>
+                <button>Buy Now</button>
+              </div>
+            )}
+          )
+        :
+          <p>Loading...</p>
+        }
       </div>
     )
   }

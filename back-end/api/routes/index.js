@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken')
 const checkAuth = require('../middleware/checkAuth')
 
 // Utils config
-const pathProduct = '../../../front-end/public/products'
 const addTables = require('../config/tables.js')
 
 router.post('/sign-up', (req, res) => {
@@ -83,26 +82,18 @@ router.post('/sign-up', (req, res) => {
 
 
 
-router.post('/products', checkAuth, (req, res) => {
+router.post('/products', async (req, res) => {
     addTables.addProductsTable(db)
-    if(req.files === null) return res.status(400).json({msg: 'no file uploader'}) 
-    const file = req.files.image
-
-    file.mv(`${__dirname}/${pathProduct}/${file.name}`, err => {
-      if(err)
-        console.error(err);
-        return res.status(500).send(err)
-    })
-
+    console.log("BACK => ", req.body)
     db.query(`
-      INSERT INTO products (product_name, price, user_id, category, content, path, is_active) 
-      VALUES ('${req.body.productName}','${req.body.price}','${req.body.userId}','${req.body.category}','${req.body.content}','${file.name}', '0')
+      INSERT INTO products (user_id, product_name, price, category, content, path, is_active) 
+      VALUES ('${req.body.userId}','${req.body.productName}','${req.body.price}','${req.body.category}','${req.body.content}','${req.body.picture}', '${req.body.active}')
     `), err => {
       if(err)
         console.error(err)
         return res.status(500).send(err)
     }
-    return res.json({ body: req.body , fileName: file.name})
+    return res.json({ data: req.body})
   })
 
 router.get('/products', async (req, res) => {
