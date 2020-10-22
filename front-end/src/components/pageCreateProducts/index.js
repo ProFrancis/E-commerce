@@ -35,7 +35,6 @@ class CreateProducts extends React.Component{
       category: this.state.category,
       active: this.state.active
     }
-    console.log(" Component => ",product)
     this.props.addProduct(product)
   }
 

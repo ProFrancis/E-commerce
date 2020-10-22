@@ -84,7 +84,6 @@ router.post('/sign-up', (req, res) => {
 
 router.post('/products', async (req, res) => {
     addTables.addProductsTable(db)
-    console.log("BACK => ", req.body)
     db.query(`
       INSERT INTO products (user_id, product_name, price, category, content, path, is_active) 
       VALUES ('${req.body.userId}','${req.body.productName}','${req.body.price}','${req.body.category}','${req.body.content}','${req.body.picture}', '${req.body.active}')
