@@ -23,20 +23,23 @@ class Cards extends React.Component{
   }
 
   render(){
-    let products = this.state.products.map((product,i) => {
-      return (
-      <div key={i} id="card" >
-        <img src={require(`../../../../public/products/${product.path}`)} alt={product.product_name} whidth="250px"/>
-        <p>{product.product_name}</p>
-        <p>{product.price} $</p>
-        <button>Buy Now</button>
-      </div>
-      );
-    })
-
+    console.log("BEFORE TO CREATE PRODUCT ==> ", this.state.products.length )
     return(
       <div id="container_cards">
-        { products }
+        {this.state.products && this.state.products.length !== 0 ?
+          this.state.products.map((product,i) => {
+            return (
+              <div key={i} id="card" >
+                <img src={product.path} alt={product.product_name} whidth="250px"/>
+                <p>{product.product_name}</p>
+                <p>{product.price} $</p>
+                <button>Buy Now</button>
+              </div>
+            );
+          })
+        : 
+          <p>Loading...</p>
+        }
       </div>
     )
   }

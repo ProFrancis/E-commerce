@@ -10,11 +10,11 @@ const addUsersTable = (db) => {
 const addProductsTable = (db) => {
   db.query(`CREATE TABLE IF NOT EXISTS products ( id INT NOT NULL AUTO_INCREMENT ,
     user_id INT NOT NULL ,
-    product_name VARCHAR(100) NOT NULL ,
+    product_name VARCHAR(50) NOT NULL ,
     content TEXT NOT NULL ,
     category CHAR(1) NOT NULL ,
-    path VARCHAR(255) NOT NULL ,
-    price INT NOT NULL ,
+    path TEXT NOT NULL ,
+    price DECIMAL (5,2) NOT NULL,
     is_active INT NOT NULL ,
     date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, 
     PRIMARY KEY (id))`) 

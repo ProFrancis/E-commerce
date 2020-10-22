@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import rootReducer from './redux'
 
 // LAYOUT 
 import Header from './components/Layout/header'
@@ -18,10 +19,10 @@ import CreateProducts from './components/pageCreateProducts';
 import Dashboard from './components/pageDashboard';
 
 // REDUX
-import rootReducer from './redux'
+const init = {}
 const middleware = [thunk]
 
-const store = createStore( rootReducer, composeWithDevTools(applyMiddleware(...middleware)) )
+const store = createStore( rootReducer ,composeWithDevTools(applyMiddleware(...middleware)) )
 
 function App() {
   return (
