@@ -11,8 +11,8 @@ class Nav extends React.Component{
           <nav>
             <ul id="ulNav">
               <li><Link to="/home">Home</Link></li>
-              <li><Link to="home">Homme</Link></li>
-              <li><Link to="femme">Femme</Link></li>
+              <li><Link to="/homme">Homme</Link></li>
+              <li><Link to="/femme">Femme</Link></li>
               <li><Link to="/dashboard">Dashboard</Link></li>
             </ul>
           </nav>
@@ -20,8 +20,8 @@ class Nav extends React.Component{
         <nav>
           <ul id="ulNav">
             <li><Link to="/home">Home</Link></li>
-            <li><Link to="/home">Homme</Link></li>
-            <li><Link to="/home">Femme</Link></li>
+            <li><Link to="/homme">Homme</Link></li>
+            <li><Link to="/femme">Femme</Link></li>
             <li><Link to="/dashboard">Dashboard</Link></li>
           </ul>
         </nav>

@@ -14,7 +14,7 @@ class Cards extends React.Component{
     const { products } = this.props.products
     return(
       <div id="container_cards">
-        {products.length && products.length !== 0 ?
+        {products && products.length !== 0 ?
           products.map(product => {
             return (
               <div key={product.id} id="card">
