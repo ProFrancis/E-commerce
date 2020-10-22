@@ -25,7 +25,7 @@ export const addProduct = data => async dispatch => {
   try{
     if(Number.isInteger(data.price)) console.log("A Price is ok! ==> ",Number.isInteger(data.price))
       if(regexp.test(data.picture)) console.log("B picture is ok! ==> ",regexp.test((data.picture)))
-        const res = await axios.post(`${URL}`, data)
+        await axios.post(`${URL}`, data)
         dispatch({
           type: ADD_PRODUCT,
           product: data

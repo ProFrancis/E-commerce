@@ -21,9 +21,7 @@ import Femme from './components/pageFemme'
 import Homme from './components/pageHomme'
 
 // REDUX
-const init = {}
 const middleware = [thunk]
-
 const store = createStore( rootReducer ,composeWithDevTools(applyMiddleware(...middleware)) )
 
 function App() {

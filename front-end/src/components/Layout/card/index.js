@@ -10,6 +10,7 @@ class Cards extends React.Component{
     this.props.getProducts()
   }
 
+  femme 
   render(){
     const { products } = this.props.products
     return(

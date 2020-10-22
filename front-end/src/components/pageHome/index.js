@@ -1,9 +1,9 @@
 import React from 'react'
 
 import './style.css'
-import {Container, Row, Col } from 'react-bootstrap'
+import {Container} from 'react-bootstrap'
 
-import Cards from '../Layout/card/cards'
+import Cards from '../Layout/card'
 import Nav from '../Layout/nav'
 
 class Home extends React.Component{
