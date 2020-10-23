@@ -22,3 +22,110 @@ a:hover{
 .nav {
   color: #fff;
 }
+/* HOME */
+#ulNav li{
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(2):hover ~ .line{
+  transform: translate(100px);
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(3):hover ~ .line{
+  transform: translate(205px);
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(4):hover ~ .line{
+  transform: translate(325px);
+  transition: all .4s ease-in-out;
+}
+
+.line{
+  top: 9em;
+  width: 5em;
+  height: 3px;
+  margin-left: -22em;
+  position: absolute;
+  transition: all .4s ease-in-out;
+  animation: color 1s linear 0s alternate infinite none running;
+}
+/* HOMME */
+#ulNav li:nth-child(1):hover ~ .line2{
+  transform: translate(-100px);
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(3):hover ~ .line2{
+  transform: translate(105px);
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(4):hover ~ .line2{
+  transform: translate(225px);
+  transition: all .4s ease-in-out;
+}
+
+.line2{
+  top: 9em;
+  width: 5em;
+  height: 3px;
+  margin-left: -9em;
+  position: absolute;
+  transition: all .4s ease-in-out;
+  animation: color 1s linear 0s alternate infinite none running;
+}
+/* FEMMME */
+#ulNav li:nth-child(1):hover ~ .line3{
+  transform: translate(-207px);
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(2):hover ~ .line3{
+  transform: translate(-105px);
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(4):hover ~ .line3{
+  transform: translate(125px);
+  transition: all .4s ease-in-out;
+}
+
+.line3{
+  top: 9em;
+  width: 5em;
+  height: 3px;
+  margin-left: 4em;
+  position: absolute;
+  transition: all .4s ease-in-out;
+  animation: color 1s linear 0s alternate infinite none running;
+}
+/* DASHBOARD */
+#ulNav li:nth-child(1):hover ~ .line4{
+  width: 5em;
+  transform: translate(-325px);
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(2):hover ~ .line4{
+  width: 6em;
+  transform: translate(-225px);
+  transition: all .4s ease-in-out;
+}
+#ulNav li:nth-child(3):hover ~ .line4{
+  width: 6em;
+  transform: translate(-120px);
+  transition: all .4s ease-in-out;
+}
+
+.line4{
+  top: 9em;
+  width: 7em;
+  height: 3px;
+  margin-left: 19em;
+  position: absolute;
+  transition: all .4s ease-in-out;
+  animation: color 1s linear 0s alternate infinite none running;
+}
+
+@keyframes color{
+  0%, 100% {
+    background-color: #407996
+  }
+  50%{
+    background-color: #1da0ec
+  }
+}
