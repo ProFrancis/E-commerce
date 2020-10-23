@@ -15,10 +15,12 @@ import Accueil from './components/pageAccueil'
 import Home from './components/pageHome'
 import SignUp from './components/pageSignUp/SignUp'
 import SignIn from './components/pageSignIn/SignIn'
-import CreateProducts from './components/pageCreateProducts'
-import Dashboard from './components/pageDashboard'
 import Femme from './components/pageFemme'
 import Homme from './components/pageHomme'
+import Dashboard from './components/pageDashboard'
+import Add from './components/pageDashboard/pageAdd'
+import Buy from './components/pageDashboard/pageBuy'
+import Profil from './components/pageDashboard/pageProfil'
 
 // REDUX
 const middleware = [thunk]
@@ -55,16 +57,13 @@ function App() {
               <Dashboard/>
             </Route>
             <Route exact path="/Dashboard/add">
-              <CreateProducts/>
+              <Add/>
             </Route>
             <Route exact path="/Dashboard/buy">
-              <CreateProducts/>
-            </Route>
-            <Route exact path="/Dashboard/myProducts">
-              <CreateProducts/>
+              <Buy/>
             </Route>
             <Route exact path="/Dashboard/profil">
-              <CreateProducts/>
+              <Profil/>
             </Route>
           </Switch>
         </Router>

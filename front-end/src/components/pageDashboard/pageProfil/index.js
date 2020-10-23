@@ -1,15 +1,14 @@
 import React from 'react'
-import Cards from '../Layout/dashboardCards'
 
 // COMPONENTS
-import Nav from '../Layout/nav'
-import DashboardNav from "../Layout/dashboardNav"
-
+import Nav from '../../Layout/nav'
+import DashboardNav from '../../Layout/dashboardNav'
 // CSS
-import './style.css'
+import '../style.css'
 import { Container } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-class Dashboard extends React.Component{
+class Profil extends React.Component{
   render(){
     return(
       <div id="bodyDash">
@@ -18,7 +17,7 @@ class Dashboard extends React.Component{
           <div id="block_Dash">
             <DashboardNav/>
             <Container>
-              <Cards/>
+
             </Container>
           </div>
         </div>
@@ -26,4 +25,4 @@ class Dashboard extends React.Component{
     )
   }
 }
-export default Dashboard;
+export default Profil
