@@ -45,17 +45,26 @@ function App() {
             <Route exact path="/SignIn">
               <SignIn />
             </Route>
-            <Route exact path="/CreateProducts">
-              <CreateProducts/>
-            </Route>
-            <Route exact path="/Dashboard">
-              <Dashboard/>
-            </Route>
             <Route exact path="/Femme">
               <Femme/>
             </Route>
             <Route exact path="/Homme">
               <Homme/>
+            </Route>
+            <Route exact path="/Dashboard">
+              <Dashboard/>
+            </Route>
+            <Route exact path="/Dashboard/add">
+              <CreateProducts/>
+            </Route>
+            <Route exact path="/Dashboard/buy">
+              <CreateProducts/>
+            </Route>
+            <Route exact path="/Dashboard/myProducts">
+              <CreateProducts/>
+            </Route>
+            <Route exact path="/Dashboard/profil">
+              <CreateProducts/>
             </Route>
           </Switch>
         </Router>
