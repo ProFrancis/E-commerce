@@ -25,4 +25,70 @@
 #navDash a:hover {
   color: black;
 }
+
+#bodyCreateProducts select, #bodyCreateProducts input {
+  border: none;
+  outline: none;
+  margin-bottom: 1.5em;
+  background-color: transparent;
+  border-bottom: 1px solid #252926;
+}
+
+#bodyCreateProducts ::-webkit-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+  color: #252926;
+}
+
+#bodyCreateProducts :-ms-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+  color: #252926;
+}
+
+#bodyCreateProducts ::-ms-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+  color: #252926;
+}
+
+#bodyCreateProducts ::placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label {
+  color: #252926;
+}
+
+#bodyCreateProducts .divForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#bodyCreateProducts form {
+  margin: 0 auto;
+}
+
+#bodyCreateProducts .sieze {
+  max-width: 47%;
+}
+
+#bodyCreateProducts input {
+  width: 100%;
+}
+
+#bodyCreateProducts input[type="text"] {
+  background: rgba(0, 0, 0, 0);
+}
+
+#bodyCreateProducts select {
+  width: 47%;
+  color: #252926;
+}
+
+#bodyCreateProducts textarea {
+  width: 100%;
+  height: 12em;
+}
+
+#bodyCreateProducts button {
+  width: 100%;
+  border: none;
+  background-color: #219adc;
+  color: #ffff;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,7 @@
+$color_input_border: #252926;
+$color_blue: #219adc;
+$color_white: #ffff;
+
 #bodyDash{
   display: flex;
   flex-direction: column;
@@ -15,5 +19,50 @@
     &:hover{
       color: black;
     }
+  }
+}
+
+// ADD 
+#bodyCreateProducts{
+  select, input{
+    border: none;
+    outline: none;
+    margin-bottom: 1.5em;
+    background-color: transparent;
+    border-bottom: 1px solid $color_input_border;
+  }
+  ::placeholder, button, .inputfile + label{
+    color: $color_input_border;
+  }
+  .divForm{
+    display: flex;
+    justify-content: space-between;
+  }
+  form{
+    margin: 0 auto;
+  }
+  .sieze{
+    max-width: 47%;
+  }
+  input{
+    width: 100%;
+  }
+  input[type="text"]{
+    background: rgba(0, 0, 0, 0);
+  }
+  select{
+    width: 47%;
+    color: $color_input_border;
+  }
+
+  textarea{
+    width: 100%;
+    height: 12em;
+  }
+  button{
+    width: 100%;
+    border: none;
+    background-color: $color_blue;
+    color: $color_white;
   }
 }
