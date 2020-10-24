@@ -16,13 +16,85 @@
 
 #block_Dash nav {
   position: fixed;
+  margin-left: 1em;
+}
+
+#navDash li {
+  margin: 0.5em;
 }
 
 #navDash a {
   text-decoration: none;
+  font-size: 1.2em;
 }
 
 #navDash a:hover {
   color: black;
+}
+
+#bodyCreateProducts select, #bodyCreateProducts input, .profil select, .profil input {
+  border: none;
+  outline: none;
+  margin-bottom: 1.5em;
+  background-color: transparent;
+  border-bottom: 1px solid #252926;
+}
+
+#bodyCreateProducts ::-webkit-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label, .profil ::-webkit-input-placeholder, .profil button, .profil .inputfile + label {
+  color: #252926;
+}
+
+#bodyCreateProducts :-ms-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label, .profil :-ms-input-placeholder, .profil button, .profil .inputfile + label {
+  color: #252926;
+}
+
+#bodyCreateProducts ::-ms-input-placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label, .profil ::-ms-input-placeholder, .profil button, .profil .inputfile + label {
+  color: #252926;
+}
+
+#bodyCreateProducts ::placeholder, #bodyCreateProducts button, #bodyCreateProducts .inputfile + label, .profil ::placeholder, .profil button, .profil .inputfile + label {
+  color: #252926;
+}
+
+#bodyCreateProducts .divForm, .profil .divForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#bodyCreateProducts form, .profil form {
+  margin: 0 auto;
+}
+
+#bodyCreateProducts .sieze, .profil .sieze {
+  max-width: 47%;
+}
+
+#bodyCreateProducts input, .profil input {
+  width: 100%;
+}
+
+#bodyCreateProducts input[type="text"], .profil input[type="text"] {
+  background: rgba(0, 0, 0, 0);
+}
+
+#bodyCreateProducts select, .profil select {
+  width: 47%;
+  color: #252926;
+}
+
+#bodyCreateProducts textarea, .profil textarea {
+  width: 100%;
+  height: 12em;
+}
+
+#bodyCreateProducts button, .profil button {
+  width: 100%;
+  border: none;
+  background-color: #219adc;
+  color: #ffff;
 }
 /*# sourceMappingURL=style.css.map */
