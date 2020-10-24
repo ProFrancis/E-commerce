@@ -5,11 +5,12 @@ import './style.css'
 
 class Header extends React.Component{
   render(){
+    console.log("HEADER => ", window.location.href)
     return(
       <div id="layoutHeader">
         <header>
-        {window.location.href === "http://localhost:3000" ? 
-          <div className="link">
+        {window.location.href === "http://localhost:3000/" ? 
+          <div id="link">
             <Link to="/">MWF</Link> 
             <div>
               <Link to="signIn">connexion</Link>            
