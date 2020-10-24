@@ -10,12 +10,17 @@ $color_white: #ffff;
   display: flex;
   nav{
     position: fixed;
+    margin-left: 1em;
   }
 }
 
 #navDash{
+  li {
+    margin: 0.5em;
+  }
   a{
     text-decoration: none;
+    font-size: 1.2em;
     &:hover{
       color: black;
     }
@@ -23,7 +28,7 @@ $color_white: #ffff;
 }
 
 // ADD 
-#bodyCreateProducts{
+#bodyCreateProducts, .profil{
   select, input{
     border: none;
     outline: none;
