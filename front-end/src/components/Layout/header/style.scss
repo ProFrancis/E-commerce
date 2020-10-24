@@ -17,18 +17,23 @@ $font-ultra-ligt: "SF Pro ultralight";
         color: #fff;
       }
     }
+    p{
+      margin-bottom: 0;
+      margin-right: 1em;
+    }
+    img{
+      width: 2em;
+      height: 2em;
+      margin-right: 2em;
+      border-radius: 100%;
+      border: 1px solid #6b6464;
+    }
     div{
       width: 100%;
       display: flex;
       justify-content: space-around;
       justify-content: flex-end;
-      // img{ logo img profil
-      //   width: 55px;
-      //   height: 50px;
-      //   margin-right: 1.5em;
-      //   border-radius: 100%;
-      //   background-color: red;
-      // }
+      align-items: center;
       a{
         cursor: pointer;
         border: none;

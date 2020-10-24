@@ -11,8 +11,7 @@ class Nav extends React.Component{
             <li><Link to="/dashboard/profil">Profil</Link></li>
             <li><Link to="/dashboard/buy">Buy</Link></li>
             <li><Link to="/dashboard/add">Add Product</Link></li>
-            {/* <li>Poduct Sell</li>
-            <li>Prpduct in wait</li> */}
+            <li>Logout</li>
           </ul>
         </nav>
       </div>

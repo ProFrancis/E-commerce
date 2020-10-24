@@ -25,6 +25,19 @@
   color: #fff;
 }
 
+#layoutHeader header p {
+  margin-bottom: 0;
+  margin-right: 1em;
+}
+
+#layoutHeader header img {
+  width: 2em;
+  height: 2em;
+  margin-right: 2em;
+  border-radius: 100%;
+  border: 1px solid #6b6464;
+}
+
 #layoutHeader header div {
   width: 100%;
   display: -webkit-box;
@@ -35,6 +48,9 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #layoutHeader header div a {
