@@ -13,15 +13,17 @@ import Header from './components/Layout/header'
 // COMPONENTS
 import Accueil from './components/pageAccueil'
 import Home from './components/pageHome'
-import SignUp from './components/pageSignUp/SignUp';
-import SignIn from './components/pageSignIn/SignIn';
-import CreateProducts from './components/pageCreateProducts';
-import Dashboard from './components/pageDashboard';
+import SignUp from './components/pageSignUp/SignUp'
+import SignIn from './components/pageSignIn/SignIn'
+import Femme from './components/pageFemme'
+import Homme from './components/pageHomme'
+import Dashboard from './components/pageDashboard'
+import Add from './components/pageDashboard/pageAdd'
+import Buy from './components/pageDashboard/pageBuy'
+import Profil from './components/pageDashboard/pageProfil'
 
 // REDUX
-const init = {}
 const middleware = [thunk]
-
 const store = createStore( rootReducer ,composeWithDevTools(applyMiddleware(...middleware)) )
 
 function App() {
@@ -45,11 +47,23 @@ function App() {
             <Route exact path="/SignIn">
               <SignIn />
             </Route>
-            <Route exact path="/CreateProducts">
-              <CreateProducts/>
+            <Route exact path="/Femme">
+              <Femme/>
+            </Route>
+            <Route exact path="/Homme">
+              <Homme/>
             </Route>
             <Route exact path="/Dashboard">
               <Dashboard/>
+            </Route>
+            <Route exact path="/Dashboard/add">
+              <Add/>
+            </Route>
+            <Route exact path="/Dashboard/buy">
+              <Buy/>
+            </Route>
+            <Route exact path="/Dashboard/profil">
+              <Profil/>
             </Route>
           </Switch>
         </Router>

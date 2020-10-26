@@ -1,12 +1,11 @@
 import React from 'react'
 
-import './style.css'
-import {Container} from 'react-bootstrap'
-
 import Cards from '../Layout/card'
 import Nav from '../Layout/nav'
 
-class Home extends React.Component{
+import {Container} from 'react-bootstrap'
+
+class Homme extends React.Component{
   render(){
     return(
       <div>
@@ -17,5 +16,5 @@ class Home extends React.Component{
       </div>
     )
   }
-} 
-export default Home;
+}
+export default Homme;
