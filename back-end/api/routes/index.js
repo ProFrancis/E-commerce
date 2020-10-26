@@ -17,10 +17,10 @@ router.post('/sign-up', (req, res) => {
   db.query(selectsql, (err, results) => {
     if (err) throw err
     if(results.length){
-      res.status(409).json({message: 'This email already registered !'})
+      res.status(409).json({err_msg: 'This email already registered !'})
     } else {
       db.query(insertsql, (err) => { 
-        res.status(200).json({message: 'successfully registered'}) 
+        res.status(200).json({succ_msg: 'successfully registered'}) 
       })
     }  
   })
@@ -28,21 +28,20 @@ router.post('/sign-up', (req, res) => {
 
 .post('/sign-in', (req, res) => {
   const {email, password} = req.body
-  console.log(req.body)
   db.query(`SELECT * FROM users WHERE email = '${email}'`, (err, results) => {
     if (err) throw err
 
     if(results[0] && bcrypt.compareSync(password, results[0].password)){
       let token = jwt.sign(
-        { userId: results[0].id, email: results[0].email, userName: results[0].name },
+        { userId: results[0].id, email: results[0].email },
         'itssecretso', 
         { expiresIn: '1h' }
       )
-      res.status(201).send({auth: true, token: token}) 
+      res.status(201).send({token: token}) 
     } else if(!results[0]) {
-      res.status(404).send({hasAccount: false, msg: "Sorry, this user isn't recognized"})
+      res.status(404).send({msg: "Sorry, this user isn't recognized"})
     } else {
-      res.status(401).send({hasAccount: true, msg: "Wrong password, try again !"})
+      res.status(401).send({msg: "Wrong password, try again !"})
     } 
   })
 })
