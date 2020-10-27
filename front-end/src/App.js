@@ -17,10 +17,13 @@ import SignUp from './components/pageSignUp/SignUp'
 import SignIn from './components/pageSignIn/SignIn'
 import Femme from './components/pageFemme'
 import Homme from './components/pageHomme'
+import Details from './components/pageDetails'
 import Dashboard from './components/pageDashboard'
 import Add from './components/pageDashboard/pageAdd'
 import Buy from './components/pageDashboard/pageBuy'
 import Profil from './components/pageDashboard/pageProfil'
+import DetailDashboard from './components/pageDashboard/pageDetail'
+
 
 // REDUX
 const middleware = [thunk]
@@ -31,40 +34,20 @@ function App() {
     <Provider store={store}>
       <div>
         <Router>
-          <Route path="/">
-            <Header/>        
-          </Route>
+          <Route path="/" component={Header}/>
           <Switch>
-            <Route exact path="/">
-              <Accueil/>
-            </Route>
-            <Route exact path="/Home">
-              <Home/>
-            </Route>
-            <Route exact path="/SignUp">
-              <SignUp />
-            </Route>
-            <Route exact path="/SignIn">
-              <SignIn />
-            </Route>
-            <Route exact path="/Femme">
-              <Femme/>
-            </Route>
-            <Route exact path="/Homme">
-              <Homme/>
-            </Route>
-            <Route exact path="/Dashboard">
-              <Dashboard/>
-            </Route>
-            <Route exact path="/Dashboard/add">
-              <Add/>
-            </Route>
-            <Route exact path="/Dashboard/buy">
-              <Buy/>
-            </Route>
-            <Route exact path="/Dashboard/profil">
-              <Profil/>
-            </Route>
+            <Route exact path="/" component={Accueil}/>
+            <Route exact path="/Home" component={Home}/>
+            <Route exact path="/SignUp" component={SignUp}/>
+            <Route exact path="/SignIn" component={SignIn} />
+            <Route exact path="/Femme" component={Femme} />
+            <Route exact path="/Homme" component={Homme}/>
+            <Route exact path="/product/Details/:id" component={Details} />
+            <Route exact path="/Dashboard" component={Dashboard}/>
+            <Route exact path="/Dashboard/add" component={Add} />
+            <Route exact path="/Dashboard/buy" component={Buy} />
+            <Route exact path="/Dashboard/profil"  component={Profil}/>
+            <Route exact path="/Dashboard/detail/:id" component={DetailDashboard} />
           </Switch>
         </Router>
       </div>

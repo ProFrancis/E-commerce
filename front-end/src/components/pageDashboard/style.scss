@@ -71,3 +71,43 @@ $color_white: #ffff;
     color: $color_white;
   }
 }
+// DETAILS
+#detailsDashErr{
+  display: flex;
+  font-size: 2em;
+  justify-content: center;
+  text-transform: uppercase;
+}
+#detailsDash{
+  display: inline-flex;
+  img{
+    width: 500px;
+    height: 550px;
+    object-fit: contain;
+  }
+  p:nth-child(1){
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+  #stock, #rupture{
+    font-size: 0.5em;
+    margin-left: 1em;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;  
+  }
+  #stock{background-color: rgb(98, 192, 98);}
+  #rupture{ background-color: rgb(206, 84, 111);}
+  #err{
+    text-align: center;
+  }
+  #infos{
+    .s{
+      font-size: 1em;
+    }
+    p{
+      font-size: 0.8em;
+      margin-top: 5px;    
+    }
+  }
+}

@@ -97,4 +97,62 @@
   background-color: #219adc;
   color: #ffff;
 }
+
+#detailsDashErr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+}
+
+#detailsDash {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+#detailsDash img {
+  width: 500px;
+  height: 550px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+#detailsDash p:nth-child(1) {
+  font-size: 1.5em;
+  margin-bottom: 0;
+}
+
+#detailsDash #stock, #detailsDash #rupture {
+  font-size: 0.5em;
+  margin-left: 1em;
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+}
+
+#detailsDash #stock {
+  background-color: #62c062;
+}
+
+#detailsDash #rupture {
+  background-color: #ce546f;
+}
+
+#detailsDash #err {
+  text-align: center;
+}
+
+#detailsDash #infos .s {
+  font-size: 1em;
+}
+
+#detailsDash #infos p {
+  font-size: 0.8em;
+  margin-top: 5px;
+}
 /*# sourceMappingURL=style.css.map */

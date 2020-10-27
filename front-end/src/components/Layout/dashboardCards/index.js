@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 import './style.css'
+import { Link } from 'react-router-dom'
 
 class Cards extends React.Component{
   constructor(props){
@@ -23,18 +24,26 @@ class Cards extends React.Component{
   }
 
   render(){
-    console.log("BEFORE TO CREATE PRODUCT ==> ", this.state.products.length )
     return(
       <div id="container_cards">
         {this.state.products && this.state.products.length !== 0 ?
           this.state.products.map((product,i) => {
             return (
-              <div key={i} id="card" >
+            <Link className="linkCard"
+              to={{
+                pathname: `/Dashboard/detail/${product.id}`,
+                state: {
+                  product: product,
+                }
+              }}
+            >
+                <div key={i} id="card" >
                 <img src={product.path} alt={product.product_name} whidth="250px"/>
                 <p>{product.product_name}</p>
                 <p>{product.price} $</p>
                 <button>Buy Now</button>
               </div>
+            </Link>
             );
           })
         : 
