@@ -8,6 +8,44 @@ $color-button-background: #6abe7b;
 .linkCard{
   font-size: initial;
 }
+.ulCardDash{
+  display: flex;
+  justify-content: flex-end;
+  width: 250px;
+  li{
+    margin: 0;
+    margin-right: 0.5em;
+  }
+  button{
+    outline: none;
+    color: white;
+    font-size: 0.6em;
+    border-radius: 5px;
+    transition: all 1s;
+    text-transform: uppercase;
+  }
+  #ligne{
+    border: 1px solid #21880f;
+    background-color: #59b849;
+  }
+  #show{
+    border: 1px solid #713196;
+    background-color: #b15dd8;
+  }
+  #delete{
+    background-color: #e05858;
+    border: 1px solid #bb0034;
+  }
+  #ligne:hover{
+    background-color: #21880f;
+  }
+  #show:hover{
+    background-color: #713196;
+  }
+  #delete:hover{
+    background-color: #bb0034;
+  }
+}
 #card{
   width: 250px;
   height: 395px;
@@ -15,7 +53,7 @@ $color-button-background: #6abe7b;
   transition: 0.5s;
   text-align: center;
   position: relative;
-  margin: 0px 20px 20px 0px;
+  margin: 0px 20px 10px 0px;
   border: 1px solid $color-border;
   font-family: 'SF Pro UltraLight';
   img{
@@ -40,7 +78,7 @@ $color-button-background: #6abe7b;
     width: 100%;
     position: absolute;
     padding: 9px 0px 8px 0px;
-    transform: translateY(345px);
+    transform: translateY(325px);
     background-color:$color-white;
   }
   p{
@@ -66,11 +104,11 @@ $color-button-background: #6abe7b;
     height: 460px;
     p:nth-child(3n){
       opacity: 1;
-      transform: translateY(381px);
+      transform: translateY(365px);
     }
     button{
       opacity: 1;
-      transform: translateY(381px);
+      transform: translateY(365px);
     }
   }
 }

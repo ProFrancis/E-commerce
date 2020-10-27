@@ -29,21 +29,28 @@ class Cards extends React.Component{
         {this.state.products && this.state.products.length !== 0 ?
           this.state.products.map((product,i) => {
             return (
-            <Link className="linkCard"
-              to={{
-                pathname: `/Dashboard/detail/${product.id}`,
-                state: {
-                  product: product,
-                }
-              }}
-            >
+              <div>
+                <ul className="ulCardDash">
+                  <li><button id="ligne">ligne</button></li>
+                  <li><button id="show">show</button></li>
+                  <li><button id="delete">delete</button></li>
+                </ul>
                 <div key={i} id="card" >
-                <img src={product.path} alt={product.product_name} whidth="250px"/>
-                <p>{product.product_name}</p>
-                <p>{product.price} $</p>
-                <button>Buy Now</button>
+                  <Link className="linkCard"
+                    to={{
+                      pathname: `/Dashboard/detail/${product.id}`,
+                      state: {
+                        product: product,
+                      }
+                    }}
+                  >
+                    <img src={product.path} alt={product.product_name} whidth="250px"/>
+                    <p>{product.product_name}</p>
+                    <p>{product.price} $</p>
+                    <button>Buy Now</button>
+                  </Link>
+                </div>
               </div>
-            </Link>
             );
           })
         : 
