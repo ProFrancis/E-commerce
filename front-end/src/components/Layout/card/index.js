@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+// REDUX 
 import { connect } from 'react-redux'
 import { getProducts } from '../../../redux/actions/productsActions'
 
@@ -19,10 +21,19 @@ class Cards extends React.Component{
       return products.map(product => {
         return (
           <div key={product.id} id="card">
-            <img src={product.path} alt={product.product_name} whidth="250px"/>
-            <p>{product.product_name}</p>
-            <p>{product.price} $</p>
-            <button>Buy Now</button>
+            <Link className="linkCard"
+              to={{
+                pathname: `/product/Details/${product.id}`,
+                state :{
+                  product: product
+                }
+              }}
+            >
+              <img src={product.path} alt={product.product_name} whidth="250px"/>
+              <p>{product.product_name}</p>
+              <p>{product.price} $</p>
+              <button>Buy Now</button>
+            </Link>
           </div>
         )
       })
@@ -35,10 +46,19 @@ class Cards extends React.Component{
         if (product.category === "f"){
           return (
             <div key={product.id} id="card">
-              <img src={product.path} alt={product.product_name} whidth="250px"/>
-              <p>{product.product_name}</p>
-              <p>{product.price} $</p>
-              <button>Buy Now</button>
+              <Link className="linkCard"
+                to={{
+                  pathname: `/product/Details/${product.id}`,
+                  state :{
+                    product: product
+                  }
+                }}
+              >
+                <img src={product.path} alt={product.product_name} whidth="250px"/>
+                <p>{product.product_name}</p>
+                <p>{product.price} $</p>
+                <button>Buy Now</button>
+              </Link>
             </div>
           )
         }else{
@@ -62,10 +82,19 @@ class Cards extends React.Component{
         if (product.category === "h"){
           return (
             <div key={product.id} id="card">
-              <img src={product.path} alt={product.product_name} whidth="250px"/>
-              <p>{product.product_name}</p>
-              <p>{product.price} $</p>
-              <button>Buy Now</button>
+              <Link className="linkCard"
+                to={{
+                  pathname: `/product/Details/${product.id}`,
+                  state :{
+                    product: product
+                  }
+                }}
+              > 
+                <img src={product.path} alt={product.product_name} whidth="250px"/>
+                <p>{product.product_name}</p>
+                <p>{product.price} $</p>
+                <button>Buy Now</button>
+              </Link>
             </div>
           )
         }else{
