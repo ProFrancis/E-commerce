@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.linkCard {
+  font-size: initial;
+}
+
 #card {
   width: 250px;
   height: 395px;

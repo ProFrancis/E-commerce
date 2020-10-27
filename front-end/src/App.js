@@ -17,10 +17,13 @@ import SignUp from './components/pageSignUp/SignUp'
 import SignIn from './components/pageSignIn/SignIn'
 import Femme from './components/pageFemme'
 import Homme from './components/pageHomme'
+import Details from './components/pageDetails'
 import Dashboard from './components/pageDashboard'
 import Add from './components/pageDashboard/pageAdd'
 import Buy from './components/pageDashboard/pageBuy'
 import Profil from './components/pageDashboard/pageProfil'
+import DetailDashboard from './components/pageDashboard/pageDetail'
+
 
 // REDUX
 const middleware = [thunk]
@@ -53,6 +56,9 @@ function App() {
             <Route exact path="/Homme">
               <Homme/>
             </Route>
+            <Route exact path="/Details">
+              <Details/>
+            </Route>
             <Route exact path="/Dashboard">
               <Dashboard/>
             </Route>
@@ -64,6 +70,9 @@ function App() {
             </Route>
             <Route exact path="/Dashboard/profil">
               <Profil/>
+            </Route>
+            <Route exact path="/Dashboard/detail">
+             <DetailDashboard/>
             </Route>
           </Switch>
         </Router>
