@@ -79,19 +79,19 @@ router.post('/sign-up', (req, res) => {
 
 
 //
-
-
 router.post('/products', (req, res) => {
     addTables.addProductsTable(db)
-    db.query(`
-      INSERT INTO products (user_id, product_name, price, category, content, path, is_active) 
-      VALUES ('${req.body.userId}','${req.body.productName}','${req.body.price}','${req.body.category}','${req.body.content}','${req.body.picture}', '${req.body.active}')
-    `), err => {
-      if(err)
-        console.error(err)
-        return res.status(500).send(err)
-    }
-    return res.json({ data: req.body})
+    console.log("BEFORE => ", req.body)
+    // db.query(`
+    //   INSERT INTO products (user_id, product_name, price, category, content, path, is_active) 
+    //   VALUES ('${req.body.userId}','${req.body.productName}','${req.body.price}','${req.body.category}','${req.body.content}','${req.body.picture}', '${req.body.active}')
+    // `), err => {
+    //   if(err){
+    //     console.error(err)
+    //     return res.status(500).send(err)
+    //   }
+    // }
+    return res.json(req.body).status(200)
   })
 
 router.get('/products', async (req, res) => {
@@ -105,7 +105,7 @@ router.get('/products', async (req, res) => {
 })
 
 router.get('/products/:id', async (req, res) => {
-  db.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, response){
+  await db.query(`SELECT * FROM products WHERE user_id = ${req.params.id} `, function(err, response){
     try{  
       return res.json(response).status(200)
     }catch(err){
@@ -114,19 +114,27 @@ router.get('/products/:id', async (req, res) => {
   })
 })
 
-router.put('/cccc/:id', async (req,res) => {
-// PUT
-
+router.put('/products/:id', async (req,res) => {
+db.query(`UPDATE products SET is_active = (
+  CASE 
+    WHEN is_active = 1 THEN 0
+    WHEN is_active = 0 THEN 1
+  END
+  ) WHERE id = '${req.params.id}'`, async function(err, response){
+  try{
+    return res.json(response).status(200)
+  }catch(err){
+    return res.send(500).send(`Cannot update product on id = "${req.params.id}" `, err)
+  }
+})
 
 })
 
-router.delete('/createProducts/:id', async (req, res) => {
-  de.query(`SELECT * FROM products WHERE user_id = "${req.params.id}"`, function(err, response) {
-    try{
-      // DELETE
-    }catch(err){
-      return res.send(500).send(`Cannot delete product on user_id = "${req.params.id}" `, err)
-    }
+router.delete('/products/:id',  (req, res) => {
+  const sql = `DELETE FROM products WHERE id = ${req.params.id}`
+  db.query(sql, err => {
+    if(err) throw err;
+    res.send('Article Deleted !').status(200)
   })
 })
 

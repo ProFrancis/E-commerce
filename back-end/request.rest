@@ -23,12 +23,13 @@ POST  http://localhost:3001/products
 content-type: application/json
 
 {
-  "productName": "sample",
-  "price": 12,
-  "userId": 1,
-  "category": "H",
-  "content": "Boulalalalala",
-  "picture": "okay.png"
+    "userId": 3,
+    "productName": "Jean Noir",
+    "content": "Jean Slime noir",
+    "price": "12.00",
+    "category": "f",
+    "picture": "https://media.cyrillus.fr/Pictures/cyrillus/55422/jean-slim-enduit-femme.jpg?width=542",
+    "active": 1,
 }
 
 ###
@@ -37,7 +38,7 @@ content-type: application/json
 
 ###
 
-GET http://localhost:3001/createProducts/1
+GET http://localhost:3001/products/3
 content-type: application/json
 
 ###
@@ -45,5 +46,9 @@ GET http://localhost:3001/users
 content-type: application/json
 
 ###
-GET http://localhost:3001/users/2
+PUT http://localhost:3001/products/1
+content-type: application/json
+
+###
+DELETE http://localhost:3001/products/1
 content-type: application/json
