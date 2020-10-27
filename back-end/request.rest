@@ -23,13 +23,13 @@ POST  http://localhost:3001/products
 content-type: application/json
 
 {
-    "userId": 3,
-    "productName": "Jean Noir",
-    "content": "Jean Slime noir",
-    "price": "12.00",
-    "category": "f",
-    "picture": "https://media.cyrillus.fr/Pictures/cyrillus/55422/jean-slim-enduit-femme.jpg?width=542",
-    "active": 1,
+  "userId": 1,
+  "productName": "Jean Noir",
+  "price": 49.99,
+  "category": "f",
+  "content": "Jean slime noir taille 42",
+  "picture": "https://www.pimkie.fr/dw/image/v2/AAYN_PRD/on/demandware.static/-/Sites-pimkie-master-catalog/default/dw3acc2bb2/images/140667_683A06_portrait_HD_1.JPG?sw=760&sh=938",
+  "active": 1
 }
 
 ###
@@ -42,13 +42,13 @@ GET http://localhost:3001/products/3
 content-type: application/json
 
 ###
-GET http://localhost:3001/users
-content-type: application/json
-
-###
 PUT http://localhost:3001/products/1
 content-type: application/json
 
 ###
 DELETE http://localhost:3001/products/1
+content-type: application/json
+
+###
+GET http://localhost:3001/users
 content-type: application/json
