@@ -11,8 +11,12 @@ class Cards extends React.Component{
   }
 
    pageHome = (products) => {
-    if(products && products.length !== 0){ 
-      products.map(product => {
+    if(!products.length){ 
+      return(
+        <p>Loading...</p>
+      )
+    }else{
+      return products.map(product => {
         return (
           <div key={product.id} id="card">
             <img src={product.path} alt={product.product_name} whidth="250px"/>
@@ -20,19 +24,15 @@ class Cards extends React.Component{
             <p>{product.price} $</p>
             <button>Buy Now</button>
           </div>
-        )}
-      )
-    }else{
-      return(
-        <p>Loading...</p>
-      )
+        )
+      })
     }
   }
 
   pageFemme = (products) => {
-    if(products && products.length !== 0){
-      products.map(product => {
-        if (product.category === "f")
+    if(products.length){
+      return products.map(product => {
+        if (product.category === "f"){
           return (
             <div key={product.id} id="card">
               <img src={product.path} alt={product.product_name} whidth="250px"/>
@@ -41,6 +41,13 @@ class Cards extends React.Component{
               <button>Buy Now</button>
             </div>
           )
+        }else{
+          return (
+            <div>
+              <p>Aucun article femme disponnible...</p>
+            </div>
+          )
+        }
       })
     }else {
       return (
@@ -50,9 +57,9 @@ class Cards extends React.Component{
   }
 
   pageHomme = (products) => {
-    if(products && products.length !== 0){ 
-      products.map(product => {
-        if (product.category === "h")
+    if(products.length){ 
+      return products.map(product => {
+        if (product.category === "h"){
           return (
             <div key={product.id} id="card">
               <img src={product.path} alt={product.product_name} whidth="250px"/>
@@ -61,7 +68,14 @@ class Cards extends React.Component{
               <button>Buy Now</button>
             </div>
           )
-      })
+        }else{
+          return (
+            <div>
+              <p>Aucun article homme disponnible...</p>
+            </div>
+          )
+        }}
+      )
     }else{
       return(
         <p>Loading...</p>
