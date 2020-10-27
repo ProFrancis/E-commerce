@@ -31,8 +31,10 @@ class Cards extends React.Component{
             return (
             <Link className="linkCard"
               to={{
-                pathname: '/Dashboard/detail',
-                product: product
+                pathname: `/Dashboard/detail/${product.id}`,
+                state: {
+                  product: product,
+                }
               }}
             >
                 <div key={i} id="card" >

@@ -34,46 +34,20 @@ function App() {
     <Provider store={store}>
       <div>
         <Router>
-          <Route path="/">
-            <Header/>        
-          </Route>
+          <Route path="/" component={Header}/>
           <Switch>
-            <Route exact path="/">
-              <Accueil/>
-            </Route>
-            <Route exact path="/Home">
-              <Home/>
-            </Route>
-            <Route exact path="/SignUp">
-              <SignUp />
-            </Route>
-            <Route exact path="/SignIn">
-              <SignIn />
-            </Route>
-            <Route exact path="/Femme">
-              <Femme/>
-            </Route>
-            <Route exact path="/Homme">
-              <Homme/>
-            </Route>
-            <Route exact path="/Details">
-              <Details/>
-            </Route>
-            <Route exact path="/Dashboard">
-              <Dashboard/>
-            </Route>
-            <Route exact path="/Dashboard/add">
-              <Add/>
-            </Route>
-            <Route exact path="/Dashboard/buy">
-              <Buy/>
-            </Route>
-            <Route exact path="/Dashboard/profil">
-              <Profil/>
-            </Route>
-            <Route exact path="/Dashboard/detail">
-             <DetailDashboard/>
-            </Route>
+            <Route exact path="/" component={Accueil}/>
+            <Route exact path="/Home" component={Home}/>
+            <Route exact path="/SignUp" component={SignUp}/>
+            <Route exact path="/SignIn" component={SignIn} />
+            <Route exact path="/Femme" component={Femme} />
+            <Route exact path="/Homme" component={Homme}/>
+            <Route exact path="/Details" component={Details} />
+            <Route exact path="/Dashboard" component={Dashboard}/>
+            <Route exact path="/Dashboard/add" component={Add} />
+            <Route exact path="/Dashboard/buy" component={Buy} />
+            <Route exact path="/Dashboard/profil"  component={Profil}/>
+            <Route exact path="/Dashboard/detail/:id" component={DetailDashboard} />
           </Switch>
         </Router>
       </div>

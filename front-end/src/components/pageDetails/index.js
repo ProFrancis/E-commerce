@@ -2,6 +2,7 @@ import React from 'react'
 
 
 class details extends React.Component{
+  // static propTypes = { name: PropTypes.string.isRequired };
 
   render(){
     console.log(this.props)
