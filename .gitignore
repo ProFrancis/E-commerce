@@ -4,7 +4,6 @@ back-end/node_modules
 back-end/dist
 back-end/api/database
 
-
 # local env files
 back-end/.env
 back-end/.env.local
@@ -25,8 +24,6 @@ back-end/*.ntvs*
 back-end/*.njsproj
 back-end/*.sln
 back-end/*.sw?
-
-# Front-end
 
 # dependencies
 front-end/node_modules
