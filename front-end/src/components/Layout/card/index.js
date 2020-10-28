@@ -13,11 +13,7 @@ class Cards extends React.Component{
   }
 
    pageHome = (products) => {
-    if(!products.length){ 
-      return(
-        <p>Loading...</p>
-      )
-    }else{
+    if(products){ 
       return products.map(product => {
         return (
           <div key={product.id} id="card">
@@ -37,11 +33,15 @@ class Cards extends React.Component{
           </div>
         )
       })
+    }else{
+      return(
+        <p>Loading...</p>
+      )
     }
   }
 
   pageFemme = (products) => {
-    if(products.length){
+    if(products){
       return products.map(product => {
         if (product.category === "f"){
           return (
@@ -61,12 +61,6 @@ class Cards extends React.Component{
               </Link>
             </div>
           )
-        }else{
-          return (
-            <div>
-              <p>Aucun article femme disponnible...</p>
-            </div>
-          )
         }
       })
     }else {
@@ -77,7 +71,7 @@ class Cards extends React.Component{
   }
 
   pageHomme = (products) => {
-    if(products.length){ 
+    if(products){ 
       return products.map(product => {
         if (product.category === "h"){
           return (
@@ -95,12 +89,6 @@ class Cards extends React.Component{
                 <p>{product.price} $</p>
                 <button>Buy Now</button>
               </Link>
-            </div>
-          )
-        }else{
-          return (
-            <div>
-              <p>Aucun article homme disponnible...</p>
             </div>
           )
         }}
