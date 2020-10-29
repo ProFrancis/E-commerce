@@ -2,7 +2,8 @@ import axios from 'axios'
 
 import {  LIST_PRODUCT, LIST_PRODUCT_ERROR, 
           ADD_PRODUCT, ADD_PRODUCT_ERROR, 
-          UPDATE_STATUS_PRODUCT, UPDATE_STATUS_PRODUCT_ERROR
+          UPDATE_STATUS_PRODUCT, UPDATE_STATUS_PRODUCT_ERROR,
+          REMOVE_PRODUCT, REMOVE_PRODUCT_ERROR
         } from '../types/productsTypes'
 
 const URL = 'http://localhost:3001/products'
@@ -60,10 +61,17 @@ export const putStatusProduct = (id) => async dispatch => {
   }
 } 
 // DELETE PRODUCT
-export const deleteProduct = () => async dispatch => {
+export const deleteProduct = (id) => async dispatch => {
   try{
-
+    await axios.delete(`${URL}/${id}`)
+    dispatch({
+      type: REMOVE_PRODUCT,
+      id: id
+    })
   }catch(err){
-
+    dispatch({
+      type: REMOVE_PRODUCT_ERROR,
+      error: console.log(err)
+    })
   }
 }

@@ -1,4 +1,4 @@
-import {  ADD_PRODUCT, LIST_PRODUCT, UPDATE_STATUS_PRODUCT, UPDATE_STATUS_PRODUCT_ERROR } from '../types/productsTypes'
+import {  ADD_PRODUCT, LIST_PRODUCT, UPDATE_STATUS_PRODUCT, REMOVE_PRODUCT } from '../types/productsTypes'
 
 const initialState = {
   products: [],
@@ -36,6 +36,12 @@ export default function(state= initialState, action){
         })
       })
         }
-    default: return state
+    case REMOVE_PRODUCT: {
+      return Object.assign({}, state, {
+        products: state.products.filter(product => product.id !== action.id)
+      })
+    }
+    default: 
+      return state
   }
 }

@@ -4,7 +4,7 @@ import axios from 'axios'
 // REDUX 
 import { bindActionCreators } from 'redux' 
 import { connect } from 'react-redux'
-import { getProducts , putStatusProduct } from '../../../redux/actions/productsActions'
+import { getProducts , putStatusProduct, deleteProduct } from '../../../redux/actions/productsActions'
 
 import './style.css'
 import { Link } from 'react-router-dom'
@@ -35,7 +35,7 @@ class Cards extends React.Component{
                       product: product,
                     }
                   }}>show</Link></li>
-                  <li><button id="delete">delete</button></li>
+                  <li><button id="delete" onClick={(e) => this.props.deleteProduct(product.id)}>delete</button></li>
                 </ul>
                 <div key={i} id="card" >
                   <Link className="linkCard"
@@ -67,6 +67,6 @@ function mapStateToProps(state){
   return { auth, error, products }
 }
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getProducts, putStatusProduct}, dispatch)
+  return bindActionCreators({ getProducts, putStatusProduct, deleteProduct}, dispatch)
 }
 export default connect(mapStateToProps,mapDispatchToProps)(Cards);
