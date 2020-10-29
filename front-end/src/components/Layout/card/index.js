@@ -15,23 +15,25 @@ class Cards extends React.Component{
    pageHome = (products) => {
     if(products){ 
       return products.map(product => {
-        return (
-          <div key={product.id} id="card">
-            <Link className="linkCard"
-              to={{
-                pathname: `/product/Details/${product.id}`,
-                state :{
-                  product: product
-                }
-              }}
-            >
-              <img src={product.path} alt={product.product_name} whidth="250px"/>
-              <p>{product.product_name}</p>
-              <p>{product.price} $</p>
-              <button>Buy Now</button>
-            </Link>
-          </div>
-        )
+        if(product.is_active !== 0){
+          return (
+            <div key={product.id} id="card">
+              <Link className="linkCard"
+                to={{
+                  pathname: `/product/Details/${product.id}`,
+                  state :{
+                    product: product
+                  }
+                }}
+              >
+                <img src={product.path} alt={product.product_name} whidth="250px"/>
+                <p>{product.product_name}</p>
+                <p>{product.price} $</p>
+                <button>Buy Now</button>
+              </Link>
+            </div>
+          )
+        }
       })
     }else{
       return(
@@ -43,7 +45,7 @@ class Cards extends React.Component{
   pageFemme = (products) => {
     if(products){
       return products.map(product => {
-        if (product.category === "f"){
+        if (product.category === "f" && product.is_active !== 0){
           return (
             <div key={product.id} id="card">
               <Link className="linkCard"
@@ -73,7 +75,7 @@ class Cards extends React.Component{
   pageHomme = (products) => {
     if(products){ 
       return products.map(product => {
-        if (product.category === "h"){
+        if (product.category === "h" && product.is_active !== 0){
           return (
             <div key={product.id} id="card">
               <Link className="linkCard"
@@ -114,7 +116,6 @@ class Cards extends React.Component{
   render(){
     const { products } = this.props.products
     const url = window.location.href
-    console.log(url)
     return(
       <div id="container_cards">
         {this.renderSwitch(url, products)}

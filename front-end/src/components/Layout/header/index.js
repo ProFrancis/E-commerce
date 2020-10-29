@@ -5,7 +5,6 @@ import './style.css'
 
 class Header extends React.Component{
   render(){
-    console.log("HEADER => ", window.location.href)
     return(
       <div id="layoutHeader">
         <header>
