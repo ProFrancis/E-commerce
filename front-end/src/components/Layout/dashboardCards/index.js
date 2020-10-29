@@ -1,38 +1,40 @@
 import React from 'react'
 import axios from 'axios'
 
+// REDUX 
+import { bindActionCreators } from 'redux' 
+import { connect } from 'react-redux'
+import { getProducts , putStatusProduct } from '../../../redux/actions/productsActions'
+
 import './style.css'
 import { Link } from 'react-router-dom'
 
 class Cards extends React.Component{
-  constructor(props){
-    super(props)
-    this.state = {
-      products: []
-    }
-  }
 
-  async componentDidMount(){
-    try{
-      const response = await axios.get('http://localhost:3001/products')
-      const products = await response.data
-      if(response.status !== 200) throw Error(response.statusText)
-      this.setState({ products })
-    }catch(err){
-      console.error(err)
-    }
+  componentDidMount(){
+    this.props.getProducts()
   }
 
   render(){
+    const { products } = this.props.products
     return(
       <div id="container_cards">
-        {this.state.products && this.state.products.length !== 0 ?
-          this.state.products.map((product,i) => {
+        {products ?
+          products.map((product,i) => {
             return (
               <div>
                 <ul className="ulCardDash">
-                  <li><button id="ligne">ligne</button></li>
-                  <li><button id="show">show</button></li>
+                  {product.is_active === 1 ?
+                    <li><button id="ligne" onClick={(e) => this.props.putStatusProduct(product.id)}>ligne</button></li>
+                    :
+                    <li><button id="disabled" onClick={(e) => this.props.putStatusProduct(product.id)}>disabled</button></li>
+                  }
+                  <li><Link id="show" to={{
+                    pathname: `/Dashboard/detail/${product.id}`,
+                    state: {
+                      product: product,
+                    }
+                  }}>show</Link></li>
                   <li><button id="delete">delete</button></li>
                 </ul>
                 <div key={i} id="card" >
@@ -60,4 +62,11 @@ class Cards extends React.Component{
     )
   }
 } 
-export default Cards;
+function mapStateToProps(state){
+  const { auth, error, products } = state
+  return { auth, error, products }
+}
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({ getProducts, putStatusProduct}, dispatch)
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Cards);

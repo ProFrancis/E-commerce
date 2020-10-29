@@ -1,4 +1,4 @@
-import {  ADD_PRODUCT, LIST_PRODUCT } from '../types/productsTypes'
+import {  ADD_PRODUCT, LIST_PRODUCT, UPDATE_STATUS_PRODUCT, UPDATE_STATUS_PRODUCT_ERROR } from '../types/productsTypes'
 
 const initialState = {
   products: [],
@@ -19,6 +19,23 @@ export default function(state= initialState, action){
         products: action.products,
         loading: !state.loading
       }
+    case UPDATE_STATUS_PRODUCT: { 
+      return Object.assign({}, state,{
+        products: state.products.map(product => {
+          if(product.id == action.id){
+            if(product.is_active === 1 ) {
+              product.is_active = 0 
+              return {...product}
+            }else if(product.is_active === 0){
+              product.is_active = 1
+              return {...product}
+            }
+          }else{ 
+            return {...product}
+          }
+        })
+      })
+        }
     default: return state
   }
 }
