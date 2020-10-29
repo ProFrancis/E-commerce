@@ -23,7 +23,7 @@
   margin-right: 0.5em;
 }
 
-.ulCardDash button {
+.ulCardDash button, .ulCardDash #show {
   outline: none;
   color: white;
   font-size: 0.6em;
@@ -33,9 +33,21 @@
   text-transform: uppercase;
 }
 
+.ulCardDash #show {
+  padding: 2px;
+  color: white;
+  font-size: 0.6em;
+  font-family: inherit;
+}
+
 .ulCardDash #ligne {
   border: 1px solid #21880f;
   background-color: #59b849;
+}
+
+.ulCardDash #disabled {
+  background-color: #e05858;
+  border: 1px solid #bb0034;
 }
 
 .ulCardDash #show {

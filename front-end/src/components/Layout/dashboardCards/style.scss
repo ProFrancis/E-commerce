@@ -16,7 +16,7 @@ $color-button-background: #6abe7b;
     margin: 0;
     margin-right: 0.5em;
   }
-  button{
+  button, #show{
     outline: none;
     color: white;
     font-size: 0.6em;
@@ -24,9 +24,19 @@ $color-button-background: #6abe7b;
     transition: all 1s;
     text-transform: uppercase;
   }
+  #show{
+    padding: 2px;
+    color: white;
+    font-size: 0.6em;
+    font-family: inherit;
+  }
   #ligne{
     border: 1px solid #21880f;
     background-color: #59b849;
+  }
+  #disabled{
+    background-color: #e05858;
+    border: 1px solid #bb0034;
   }
   #show{
     border: 1px solid #713196;
