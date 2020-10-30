@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button, Alert } from 'react-bootstrap'
 import './style.css'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signIn } from '../../redux/actions/authActions'
 import { clearErrors } from '../../redux/actions/errorActions'
@@ -27,11 +27,13 @@ class SignIn extends Component {
 
     const {email, password} = this.state
     this.props.signIn({ email, password })
-
+    
     Object.keys(this.state).forEach(elm => this.setState({[elm]: ''}))
   }
 
   componentDidUpdate(prevProps) {
+    this.props.isAuthenticated && this.props.history.push('/dashboard')
+    
     const { error } = this.props
 
     if(error !== prevProps.error) {
@@ -44,6 +46,7 @@ class SignIn extends Component {
   render() {
     return (
       <div id="signIn">
+        {/* {this.props.isAuthenticated && <} */}
         <Form method="POST" onSubmit={this.handleSubmit}  className="mx-auto w-50 text-left">
           {this.state.msg && <Alert  variant='danger'>{this.state.msg}</Alert >}
          
@@ -53,8 +56,8 @@ class SignIn extends Component {
               type="email" 
               name='email' 
               onChange={this.handleInput}  
-              placeholder="Enter email" />
-          </Form.Group>
+              placeholder="Enter email" 
+            /></Form.Group>
 
           <Form.Group controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
@@ -62,8 +65,8 @@ class SignIn extends Component {
               type="password" 
               name='password' 
               onChange={this.handleInput}  
-              placeholder="Password" />
-          </Form.Group>
+              placeholder="Password" 
+            /></Form.Group>
 
           <Button variant="primary" type="submit">
             Sign In
@@ -81,4 +84,4 @@ const mapStateToProps = (state) => ({
   error: state.error
 })
 
-export default connect(mapStateToProps, {signIn, clearErrors})(SignIn)
+export default connect(mapStateToProps, {signIn, clearErrors})(withRouter(SignIn))
