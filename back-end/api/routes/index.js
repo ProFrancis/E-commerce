@@ -11,7 +11,7 @@ const addTables = require('../config/tables.js')
 router.post('/sign-up', (req, res) => {
   const { fname, lname, email, password } = req.body 
   const pass = bcrypt.hashSync(password, 10)
-  const insertsql = `INSERT INTO users (first_name, last_name, email, password) VALUES ('${fname}', '${lname}', '${email}','${pass}')`
+  const insertsql = `INSERT INTO users (first_name, last_name, picture, email, password) VALUES ('${fname}', '${lname}', '','${email}','${pass}')`
   const selectsql = `SELECT * FROM users WHERE email = '${email}'`
   
   db.query(selectsql, (err, results) => {
