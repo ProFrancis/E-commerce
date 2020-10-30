@@ -1,5 +1,8 @@
 import React from 'react'
 import Cards from '../Layout/dashboardCards'
+import { connect } from 'react-redux'
+import { loadUser } from '../../redux/actions/authActions'
+
 
 // COMPONENTS
 import Nav from '../Layout/nav'
@@ -10,6 +13,11 @@ import './style.css'
 import { Container } from 'react-bootstrap'
 
 class Dashboard extends React.Component{
+
+  componentDidMount() {
+    this.props.loadUser(this.props.token)
+  }
+
   render(){
     return(
       <div id="bodyDash">
@@ -26,4 +34,10 @@ class Dashboard extends React.Component{
     )
   }
 }
-export default Dashboard;
+
+const mapStateToProps = (state) => ({
+  token: state.auth.token,
+  user: state.auth.user
+})
+
+export default connect(mapStateToProps, {loadUser}) (Dashboard)

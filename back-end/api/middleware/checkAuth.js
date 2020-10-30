@@ -3,7 +3,7 @@ const JWT_KEY = 'itssecretso'
 
 module.exports = async (req, res, next) => {
   try {
-    const decoded = jwt.verify(req.body.token, JWT_KEY)
+    const decoded = jwt.verify(req.header('auth'), JWT_KEY)
     req.userData = decoded
     next()
   } catch (error) {
