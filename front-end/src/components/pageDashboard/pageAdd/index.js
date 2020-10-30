@@ -39,6 +39,7 @@ class CreateProducts extends React.Component{
       active: this.state.active
     }
     this.props.addProduct(product)
+    event.target.reset()
   }
 
   render(){
