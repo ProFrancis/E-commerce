@@ -12,6 +12,7 @@ class Header extends React.Component{
   render(){
     const { user } = this.props.auth
     console.log(user)
+    console.log(window.location.href)
     return(
       <div id="layoutHeader">
         <header>
@@ -32,6 +33,13 @@ class Header extends React.Component{
           <div className="logoSignIn">
             <Link to="/" >MWF</Link>
           </div>
+        : window.location.href === "http://localhost:3000/"  ?
+        <div className="logoSignIn">
+          <Link to="/" className="connexionHome">MWF</Link>
+          <div>
+            <Link to="signIn" className="connexionHome">connexion</Link>            
+          </div>
+        </div>
         :
         <div>
           <Link to="/">MWF</Link>

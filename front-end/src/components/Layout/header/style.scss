@@ -1,10 +1,13 @@
 // VARIABLES FONTS
 $font-ultra-ligt: "SF Pro ultralight";
-$color_white: #100f0f;
+$color_black: white;
 
 #layoutHeader{
   display: flex;
   flex-direction: column;
+  .connexionHome{
+    z-index: 10;
+  }
   header{
     padding: 1.5em;
     h1{
@@ -14,7 +17,7 @@ $color_white: #100f0f;
     }
     #link{
       a{
-        color: $color_white;
+        color: $color_black;
       }
     }
     .logoSignIn{

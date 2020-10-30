@@ -8,6 +8,10 @@
           flex-direction: column;
 }
 
+#layoutHeader .connexionHome {
+  z-index: 10;
+}
+
 #layoutHeader header {
   padding: 1.5em;
 }
@@ -19,7 +23,7 @@
 }
 
 #layoutHeader header #link a {
-  color: #100f0f;
+  color: white;
 }
 
 #layoutHeader header .logoSignIn {

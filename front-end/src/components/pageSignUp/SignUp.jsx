@@ -114,7 +114,7 @@ export class SignUp extends Component {
             Sign UP
           </Button>
         </Form>
-        <Link to="/signin">Sign In</Link>
+        <Link to="/signIn">Sign In</Link>
         </div>
       </div>
     )
