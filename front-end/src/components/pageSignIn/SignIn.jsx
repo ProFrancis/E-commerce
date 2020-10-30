@@ -47,33 +47,35 @@ class SignIn extends Component {
     return (
       <div id="signIn">
         {/* {this.props.isAuthenticated && <} */}
-        <Form method="POST" onSubmit={this.handleSubmit}  className="mx-auto w-50 text-left">
-          {this.state.msg && <Alert  variant='danger'>{this.state.msg}</Alert >}
-         
-          <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control 
-              type="email" 
-              name='email' 
-              onChange={this.handleInput}  
-              placeholder="Enter email" 
-            /></Form.Group>
+        <div id="block_signIn">
+          <Form method="POST" onSubmit={this.handleSubmit}  className="mx-auto w-50 text-left">
+            {this.state.msg && <Alert  variant='danger'>{this.state.msg}</Alert >}
+          
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control 
+                type="email" 
+                name='email' 
+                onChange={this.handleInput}  
+                placeholder="Enter email" 
+              /></Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control 
-              type="password" 
-              name='password' 
-              onChange={this.handleInput}  
-              placeholder="Password" 
-            /></Form.Group>
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control 
+                type="password" 
+                name='password' 
+                onChange={this.handleInput}  
+                placeholder="Password" 
+              /></Form.Group>
 
-          <Button variant="primary" type="submit">
-            Sign In
-          </Button>
-        </Form>
+            <Button variant="primary" type="submit">
+              Sign In
+            </Button>
+          </Form>
 
-        <Link to="/signup">Sign Up</Link>
+          <Link to="/signup">Sign Up</Link>
+        </div>
       </div>
     )
   }

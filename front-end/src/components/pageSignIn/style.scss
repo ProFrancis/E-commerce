@@ -10,6 +10,13 @@
   background-position: center;
   background-repeat: no-repeat;
   background-image: url("../../asset/img/a8lcv-d12ts.svg");
+  #block_signIn{
+    margin-top: 20rem;
+    text-align: center;
+    a{
+      color: white;
+    }
+  }
   form {
     margin-top: 15vh;
     .form-group {

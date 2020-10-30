@@ -12,6 +12,15 @@
   background-image: url("../../asset/img/a8lcv-d12ts.svg");
 }
 
+#signIn #block_signIn {
+  margin-top: 20rem;
+  text-align: center;
+}
+
+#signIn #block_signIn a {
+  color: white;
+}
+
 #signIn form {
   margin-top: 15vh;
 }

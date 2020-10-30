@@ -1,10 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+
+// REDUX 
+import { bindActionCreators } from 'redux' 
+import { connect } from 'react-redux'
+import { loadUser } from '../../../redux/actions/authActions'
+
+// SCSS
 import './style.css';
 
 class Nav extends React.Component{
   
   home = () => {
+    const { user } = this.props.auth
     return(
       <div>
         <nav>
@@ -12,7 +20,11 @@ class Nav extends React.Component{
             <li id="underlineOne"><Link to="/home">Home</Link></li>
             <li><Link to="/homme">Homme</Link></li>
             <li><Link to="/femme">Femme</Link></li>
-            <li><Link to="/dashboard">Dashboard</Link></li>
+            {user ?
+              <li><Link to="/dashboard">Dashboard</Link></li>
+            :
+             <li><Link className="fantome">Dashboard</Link></li>
+            }
             <div className="line"></div>
           </ul>
         </nav>
@@ -20,6 +32,7 @@ class Nav extends React.Component{
     )
   }
   hommme = () => {
+    const { user } = this.props.auth
     return(
       <div>
         <nav>
@@ -27,14 +40,18 @@ class Nav extends React.Component{
             <li><Link to="/home">Home</Link></li>
             <li><Link to="/homme">Homme</Link></li>
             <li><Link to="/femme">Femme</Link></li>
-            <li><Link to="/dashboard">Dashboard</Link></li>
-            <div className="line2"></div>
+            {user ?
+              <li><Link to="/dashboard">Dashboard</Link></li>
+            :
+             <li><Link className="fantome">Dashboard</Link></li>
+            }            <div className="line2"></div>
           </ul>
         </nav>
       </div>
     )
   }
   femme = () => {
+    const { user } = this.props.auth
     return(
       <div>
         <nav>
@@ -42,14 +59,18 @@ class Nav extends React.Component{
             <li><Link to="/home">Home</Link></li>
             <li><Link to="/homme">Homme</Link></li>
             <li id="underline"><Link to="/femme">Femme</Link></li>
-            <li><Link to="/dashboard">Dashboard</Link></li>
-            <div className="line3"></div>
+            {user ?
+              <li><Link to="/dashboard">Dashboard</Link></li>
+            :
+             <li><Link className="fantome">Dashboard</Link></li>
+            }            <div className="line3"></div>
           </ul>
         </nav>
       </div>
     )
   }
   dashboard = () => {
+    const { user } = this.props.auth
     return(
       <div>
         <nav>
@@ -88,4 +109,11 @@ class Nav extends React.Component{
     )
   }
 }
-export default Nav;
+function mapStateToProps(state){
+  const { auth, error } = state
+  return { auth, error }
+}
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({loadUser }, dispatch)
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Nav);

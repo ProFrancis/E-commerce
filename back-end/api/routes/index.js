@@ -9,6 +9,7 @@ const checkAuth = require('../middleware/checkAuth')
 const addTables = require('../config/tables.js')
 
 router.post('/sign-up', (req, res) => {
+  addTables.addUsersTable(db)
   const { fname, lname, email, password } = req.body 
   const pass = bcrypt.hashSync(password, 10)
   const insertsql = `INSERT INTO users (first_name, last_name, picture, email, password) VALUES ('${fname}', '${lname}', '','${email}','${pass}')`
@@ -90,15 +91,6 @@ router.post('/sign-up', (req, res) => {
   })
 })
 
-// UPLOAD USER 
-
-
-
-
-
-
-
-//
 router.post('/products', (req, res) => {
     addTables.addProductsTable(db)
     db.query(`
@@ -146,7 +138,6 @@ db.query(`UPDATE products SET is_active = (
     return res.send(500).send(`Cannot update product on id = "${req.params.id}" `, err)
   }
 })
-
 })
 
 router.delete('/products/:id',  (req, res) => {

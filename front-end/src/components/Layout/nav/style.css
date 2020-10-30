@@ -95,6 +95,12 @@ a:hover{
   animation: color 1s linear 0s alternate infinite none running;
 }
 /* DASHBOARD */
+.fantome{
+  color: white;
+}
+.fantome:hover{
+  color: white;
+}
 #ulNav li:nth-child(1):hover ~ .line4{
   width: 5em;
   transform: translate(-325px);

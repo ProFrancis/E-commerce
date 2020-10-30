@@ -17,6 +17,13 @@ $color_white: #100f0f;
         color: $color_white;
       }
     }
+    .logoSignIn{
+      display: flex;
+      justify-content: end;      
+      a{
+        color: white;
+      }
+    }
     p{
       margin-bottom: 0;
       margin-right: 1em;

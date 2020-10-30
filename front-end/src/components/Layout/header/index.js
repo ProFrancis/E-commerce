@@ -24,7 +24,11 @@ class Header extends React.Component{
               "/>
             </div>
           </div>
-        : 
+        : window.location.href === "http://localhost:3000/signIn" ?
+        <div className="logoSignIn">
+          <Link to="/" >MWF</Link>
+        </div>
+        :
         <div>
           <Link to="/">MWF</Link>
           <div>

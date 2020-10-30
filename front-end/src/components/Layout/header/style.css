@@ -22,6 +22,19 @@
   color: #100f0f;
 }
 
+#layoutHeader header .logoSignIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+#layoutHeader header .logoSignIn a {
+  color: white;
+}
+
 #layoutHeader header p {
   margin-bottom: 0;
   margin-right: 1em;
