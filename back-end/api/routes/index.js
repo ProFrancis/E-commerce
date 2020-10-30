@@ -56,13 +56,13 @@ router.post('/sign-up', (req, res) => {
   Object.keys(data).forEach(e => e == 'password' && (data[e] = bcrypt.hashSync(data[e], 10)))
   const fields = Object.keys(data).map(e => data[e] && `${e} = "${data[e]}"`).join(', ')
 
-  // db.query(`UPDATE users SET ${fields} WHERE id = ${id}, (err, results) => {
-  //   if (err) {
-  //     console.log(err)
-  //     return res.status(500).json(err)
-  //   }
-  //   res.status(201).json(results) 
-  // })
+  db.query(`UPDATE users SET ${fields} WHERE id = ${id}`, (err, results) => {
+    if (err) {
+      console.log(err)
+      return res.status(500).json(err)
+    }
+    res.status(201).json(results) 
+  })
 
   res.status(201).json(fields) 
 })
