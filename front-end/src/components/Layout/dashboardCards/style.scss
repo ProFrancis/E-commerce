@@ -16,7 +16,7 @@ $color-button-background: #6abe7b;
     margin: 0;
     margin-right: 0.5em;
   }
-  button, #show{
+  button, #show, #update{
     outline: none;
     color: white;
     font-size: 0.6em;
@@ -24,7 +24,7 @@ $color-button-background: #6abe7b;
     transition: all 1s;
     text-transform: uppercase;
   }
-  #show{
+  #show, #update{
     padding: 2px;
     color: white;
     font-size: 0.6em;
@@ -33,6 +33,10 @@ $color-button-background: #6abe7b;
   #ligne{
     border: 1px solid #21880f;
     background-color: #59b849;
+  }
+  #update{
+    background-color: #4ea9de;
+    border: 1px solid #3281af;
   }
   #disabled{
     background-color: #e05858;

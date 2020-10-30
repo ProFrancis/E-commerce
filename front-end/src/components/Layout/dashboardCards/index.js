@@ -35,6 +35,12 @@ class Cards extends React.Component{
                       product: product,
                     }
                   }}>show</Link></li>
+                  <li><Link id="update" to={{
+                    pathname: `/Dashboard/detail/${product.id}`,
+                    state: {
+                      product: product,
+                    }
+                  }}>update</Link></li>
                   <li><button id="delete" onClick={(e) => this.props.deleteProduct(product.id)}>delete</button></li>
                 </ul>
                 <div key={i} id="card" >

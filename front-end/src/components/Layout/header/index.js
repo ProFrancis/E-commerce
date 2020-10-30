@@ -19,7 +19,7 @@ class Header extends React.Component{
             <Link to="/">MWF</Link> 
             <div>
               <p>{user.fname}</p>
-              <img src={user.path} alt="profil
+              <img src="https://avatars2.githubusercontent.com/u/27960896?s=400&u=1c07321b5bd09a643d5316d788d49a5473e193c4&v=4" alt="profil
               "/>
             </div>
           </div>
