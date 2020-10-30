@@ -52,7 +52,7 @@ class Profil extends React.Component{
       console.log(res.data)
     })
     .catch(err => {
-      console.log(err.response)
+      console.log(err.response.data)
     })
     Object.keys(this.state).forEach(elm => this.setState({[elm]: ''}))
   }
