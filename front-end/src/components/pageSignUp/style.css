@@ -9,6 +9,15 @@
   background-image: url("../../asset/img/sign_up.png");
 }
 
+#signUp #block_signIn {
+  margin-top: 20rem;
+  text-align: center;
+}
+
+#signUp #block_signIn a {
+  color: white;
+}
+
 #signUp form {
   margin-top: 15vh;
 }

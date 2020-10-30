@@ -52,7 +52,8 @@ export class SignUp extends Component {
   render() {
     return (
       <div id='signUp'>
-        <Form onSubmit={this.handleSubmit} className="ml-5 w-50 text-left">
+        <div id="block_signIn">
+        <Form onSubmit={this.handleSubmit} className="mx-auto w-50 text-left">
           {this.state.err_msg && <Alert  variant='danger'>{this.state.err_msg}</Alert >}
           {this.props.success && <Alert  variant='success'>{this.props.success}</Alert >}
           
@@ -114,6 +115,7 @@ export class SignUp extends Component {
           </Button>
         </Form>
         <Link to="/signin">Sign In</Link>
+        </div>
       </div>
     )
   }
