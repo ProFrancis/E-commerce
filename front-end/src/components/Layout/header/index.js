@@ -11,8 +11,6 @@ import './style.css'
 class Header extends React.Component{
   render(){
     const { user } = this.props.auth
-    console.log(user)
-    console.log(window.location.href)
     return(
       <div id="layoutHeader">
         <header>
